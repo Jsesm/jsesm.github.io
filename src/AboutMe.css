@@ -1,0 +1,20 @@
+.about-me {
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.about-me h2 {
+  margin-bottom: 10px;
+  font-size: 28px;
+  color: #00aaff; /* azul estilo PlayStation */
+}
+
+.about-me p {
+  font-size: 18px;
+  line-height: 1.5;
+}
