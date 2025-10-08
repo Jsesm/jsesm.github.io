@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import sampleImage from './assets/react.svg'; // Asegúrate de tener esta imagen en src/assets
 import AboutMe from './AboutMe.tsx';
