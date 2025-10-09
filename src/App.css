@@ -1,4 +1,7 @@
 /* Contenedor principal */
+
+
+
 .app-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -81,14 +84,70 @@
   background-color: #ffffff55;
 }
 
-/* Responsive */
+/* Responsive móvil */
 @media (max-width: 650px) {
+
+  /* Contenedor principal se reorganiza verticalmente */
+  .app-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola columna */
+    grid-template-rows: auto;   /* Filas automáticas según contenido */
+    gap: 15px;
+    padding: 10px;
+  }
+
+  /* Imágenes: apiladas */
+  .grid-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  /* Bloque de cuadrados: apilados */
+  .squares-block {
+    flex-direction: row; /* si quieres horizontal, puedes dejarlo así */
+    flex-wrap: wrap;     /* permite que bajen si no caben */
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    grid-column: 1; /* fuerza que ocupe toda la fila */
+    grid-row: auto;
+  }
+
+  /* Cuadrados más grandes en móvil */
   .square {
-    width: 14vw;
-    height: 14vw;
+    width: 20vw; /* un poco más grande */
+    height: 20vw;
     font-size: 18px;
   }
+
+  /* AboutMe: encima de los cuadrados */
+  .about-me-hover {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    grid-column: 1;
+    grid-row: auto;
+    margin-bottom: 10px;
+  }
+
+  /* Opcional: eliminar líneas guía en móvil */
+  .app-container::before,
+  .app-container::after {
+    display: none;
+  }
 }
+
+  body {
+    flex-direction: row; /* ahora los elementos se ponen en horizontal */
+    flex-wrap: wrap;     /* si hay muchos, que bajen a otra línea */
+    justify-content: center; /* centrar horizontalmente */
+    gap: 10px; /* ajustar espacio si quieres */
+  }
+
 
 .about-me-hover {
   position: absolute;
