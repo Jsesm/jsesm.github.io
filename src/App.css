@@ -1,6 +1,58 @@
 /* Contenedor principal */
+.perfil {
+  display: flex;
+  align-items: center; 
+  gap: 8px;        
+}
+
+.logros {
+  display: flex;
+  align-items: center; 
+  gap: 8px;        
+}
 
 
+.square-img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+
+.hora{
+  font-size: 24px;
+  color: white;
+  font-family: var(--font-family);
+}
+
+.contacto{
+  display: flex;
+  gap: 15px;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  height:20px
+}
+
+.rrss{
+  width: 5vw;
+  height: 5vw;
+  max-width: 50px;
+  max-height: 50px;
+  min-width: 30px;
+  min-height: 30px;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: span 5; /* Ocupa las 5 columnas */
+  width: 100%;  
+
+  height: 50px;      /* Reduce la altura */
+  padding: 0 10px;
+}
 
 .app-container {
   display: grid;
@@ -12,31 +64,12 @@
   position: relative;
 }
 
-/* Líneas guía */
-.app-container::before,
-.app-container::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image:
-    linear-gradient(to right, rgba(255,255,255,0.3) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.3) 1px, transparent 1px);
-  background-size: calc(100% / 5) calc(100% / 4);
-  pointer-events: none;
-}
 
-/* Imágenes en la primera fila */
-.grid-image {
-  width: 10%;
-  height: 10%;
-  object-fit: cover;
-  border-radius: 8px;
-}
 
 /* Bloque de cuadrados */
 .squares-block {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   justify-content: start;
   align-items: center;
   position: relative;
@@ -44,27 +77,34 @@
 
 /* Cuadrados */
 .square {
-  width: 10vw;
-  height: 10vw;
-  background-color: #ffffff33;
+  width: 13vw;
+  height: 13vw;
+  min-height: 120px;
+  min-width: 120px;
+  background: #001d61;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 24px;
   color: white;
-  border-radius: 12px;
   cursor: pointer;
   position: relative;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+.sobre_mi {
+  background-color: linear-gradient(290deg, var(--primary-color),rgb(53, 106, 136)); /* por ejemplo, color rojo */
+  border: 2px solid white;
+}
+
+
 /* Tooltip (texto al pasar el ratón) */
 .tooltip {
   position: absolute;
-  left: 110%; /* a la derecha del cuadrado */
+  left: 40%; /* a la derecha del cuadrado */
   top: 110%;
   transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.7);
+  background-color: transparent;
   color: white;
   padding: 5px 10px;
   border-radius: 6px;
@@ -80,41 +120,15 @@
 
 /* Hover en el cuadrado */
 .square:hover {
-  transform: scale(1.3);
-  background-color: #ffffff55;
+  
+  width: 15vw;   /* aumenta tamaño real */
+  height: 15vw;
+  min-width: 170px;
+  min-height: 170px;
 }
 
 /* Responsive móvil */
 @media (max-width: 650px) {
-
-  /* Contenedor principal se reorganiza verticalmente */
-  .app-container {
-    display: grid;
-    grid-template-columns: 1fr; /* Una sola columna */
-    grid-template-rows: auto;   /* Filas automáticas según contenido */
-    gap: 15px;
-    padding: 10px;
-  }
-
-  /* Imágenes: apiladas */
-  .grid-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-  /* Bloque de cuadrados: apilados */
-  .squares-block {
-    flex-direction: row; /* si quieres horizontal, puedes dejarlo así */
-    flex-wrap: wrap;     /* permite que bajen si no caben */
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    grid-column: 1; /* fuerza que ocupe toda la fila */
-    grid-row: auto;
-  }
-
   /* Cuadrados más grandes en móvil */
   .square {
     width: 20vw; /* un poco más grande */
@@ -122,38 +136,4 @@
     font-size: 18px;
   }
 
-  /* AboutMe: encima de los cuadrados */
-  .about-me-hover {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
-    width: 100%;
-    grid-column: 1;
-    grid-row: auto;
-    margin-bottom: 10px;
-  }
-
-  /* Opcional: eliminar líneas guía en móvil */
-  .app-container::before,
-  .app-container::after {
-    display: none;
-  }
-}
-
-  body {
-    flex-direction: row; /* ahora los elementos se ponen en horizontal */
-    flex-wrap: wrap;     /* si hay muchos, que bajen a otra línea */
-    justify-content: center; /* centrar horizontalmente */
-    gap: 10px; /* ajustar espacio si quieres */
-  }
-
-
-.about-me-hover {
-  position: absolute;
-  top: 250px; /* ajusta según la posición de los cuadrados */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  transition: opacity 0.3s ease;
 }
