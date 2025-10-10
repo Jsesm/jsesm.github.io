@@ -1,31 +1,23 @@
 /* Contenedor principal */
-.perfil {
+.app-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 20px;
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+.header{
   display: flex;
-  align-items: center; 
-  gap: 8px;  
-  cursor: pointer;      
-}
+  justify-content: space-between;
+  align-items: center;
+  grid-column: span 5; /* Ocupa las 5 columnas */
+  width: 100%;  
 
-.logros {
-  display: flex;
-  align-items: center; 
-  gap: 3px;    
-  cursor: pointer;    
-}
-
-
-.square-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-
-.hora{
-  font-size: 24px;
-  color: white;
-  font-family: var(--font-family);
+  height: 50px;      /* Reduce la altura */
+  padding: 0 10px;
 }
 
 .contacto{
@@ -46,28 +38,27 @@
   min-height: 30px;
   cursor: pointer;
 }
-.header{
+
+.perfil {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  grid-column: span 5; /* Ocupa las 5 columnas */
-  width: 100%;  
-
-  height: 50px;      /* Reduce la altura */
-  padding: 0 10px;
+  align-items: center; 
+  gap: 8px;  
+  cursor: pointer;      
 }
 
-.app-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 20px;
-  height: 100vh;
-  padding: 20px;
-  position: relative;
+.logros {
+  display: flex;
+  align-items: center; 
+  gap: 3px;    
+  cursor: pointer;    
 }
 
 
+.hora{
+  font-size: 24px;
+  color: white;
+  font-family: var(--font-family);
+}
 
 /* Bloque de cuadrados */
 .squares-block {
@@ -95,12 +86,37 @@
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Hover en el cuadrado */
+.square:hover {
+  
+  width: 15vw;   /* aumenta tamaño real */
+  height: 15vw;
+  min-width: 170px;
+  min-height: 170px;
+}
+.square-active {
+  width: 16vw;   
+  height: 16vw;
+  min-width: 180px;
+  min-height: 180px;         
+}
+
+.square:hover .tooltip {
+  opacity: 1;
+}
+
 .sobre_mi {
   background-color: linear-gradient(290deg, var(--primary-color),rgb(53, 106, 136)); /* por ejemplo, color rojo */
   border: 2px solid white;
   border-width: 5px;
 }
 
+.square-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
 
 /* Tooltip (texto al pasar el ratón) */
 .tooltip {
@@ -118,18 +134,44 @@
   transition: opacity 0.3s ease;
 }
 
-.square:hover .tooltip {
-  opacity: 1;
+.informacion {
+  grid-column: span 5;
+  grid-row: 3 / span 2; /* Ocupa las filas 3 y 4 */
+  background-color:#1547aa;
+  opacity: 0.9;;
+  min-height: 200px;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  /* 🔽 Añade esto: */
+  display: flex;
+  flex-direction: row; /* organiza en columnas horizontales */
+  justify-content: space-between; /* separa las columnas */
+  align-items: flex-start; /* alinea arriba */
+  gap: 20px; /* espacio entre columnas */
 }
 
-/* Hover en el cuadrado */
-.square:hover {
-  
-  width: 15vw;   /* aumenta tamaño real */
-  height: 15vw;
-  min-width: 170px;
-  min-height: 170px;
+
+.texto-informacion {
+  flex: 1; /* cada bloque de texto toma igual espacio */
+  color: white;
+  width: 10%;
 }
+
+.info-extra{
+  flex: 1;
+  background-color: #022782;
+  height: 100%;;
+}
+
+
+
+
+
+
 
 /* Responsive móvil */
 @media (max-width: 650px) {
