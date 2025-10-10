@@ -8,7 +8,10 @@ import Linkedin from './assets/linkedin.svg';
 import Email from './assets/email.svg';
 import Trofeo from './assets/trophy.svg';
 import Star from './assets/star.svg';
-
+import Fifa from './assets/fifa.jpg';
+import Fortnite from './assets/fortnite.jpg';
+import CV from './assets/cvJSV.png';
+import SobreMi from './assets/sobremi.png';
 
   
 
@@ -26,10 +29,11 @@ const App = () => {
 
 
   const squares = [
-    { id: 1, name: ' ', img:sampleImage },
-    { id: 2, name: 'Sobre mí', img:sampleImage },
-    { id: 3, name: 'Proyectos', img:sampleImage },
-    { id: 4, name: 'Habilidades', img:sampleImage }, 
+    { id: 1, name: ' ', img:CV },
+    { id: 2, name: 'Sobre mí', img:SobreMi },
+    { id: 3, name: 'Habilidades', img:Fifa }, 
+    { id: 4, name: 'Proyectos', img:Fortnite },
+    
   ];
 
   return (
@@ -50,7 +54,7 @@ const App = () => {
          
          <div className='logros'>
             <img src={Trofeo} height={30} width={30}  />{"    "}
-            <img src={Star}  height={15} width={15} />{"    "}
+            <img src={Star}  height={18} width={18} />{"    "}
             2
         </div>
           

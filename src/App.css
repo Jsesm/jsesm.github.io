@@ -2,19 +2,21 @@
 .perfil {
   display: flex;
   align-items: center; 
-  gap: 8px;        
+  gap: 8px;  
+  cursor: pointer;      
 }
 
 .logros {
   display: flex;
   align-items: center; 
-  gap: 8px;        
+  gap: 3px;    
+  cursor: pointer;    
 }
 
 
 .square-img {
-  width: 60%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
@@ -42,6 +44,7 @@
   max-height: 50px;
   min-width: 30px;
   min-height: 30px;
+  cursor: pointer;
 }
 .header{
   display: flex;
@@ -95,6 +98,7 @@
 .sobre_mi {
   background-color: linear-gradient(290deg, var(--primary-color),rgb(53, 106, 136)); /* por ejemplo, color rojo */
   border: 2px solid white;
+  border-width: 5px;
 }
 
 
@@ -135,5 +139,4 @@
     height: 20vw;
     font-size: 18px;
   }
-
 }
