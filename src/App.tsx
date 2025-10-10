@@ -2,7 +2,7 @@
 import './App.css';
 import sampleImage from './assets/react.svg'; // Asegúrate de tener esta imagen en src/assets
 import { useState, useEffect } from "react";
-
+import { useNavigate } from 'react-router-dom'
 import Github from './assets/github.svg'; 
 import Linkedin from './assets/linkedin.svg';
 import Email from './assets/email.svg';
@@ -16,12 +16,15 @@ import ESI from './assets/ESI.jpg';
 import Balon from './assets/balon.jpg';
 import Ordenador from './assets/ordenador.jpg';
 
+
   
 
 const App = () => {
-  
+  const navigate = useNavigate()
   const [hora, setHora] = useState(new Date());
   const [showInfo, setShowInfo] = useState(true);
+  
+  
   useEffect(() => {
     const intervalo = setInterval(() => {
       setHora(new Date());
@@ -79,8 +82,22 @@ const App = () => {
           key={sq.id}
           className={`square ${index === 1 ? 'square sobre_mi' : ''} ${showInfo && sq.id === 2 ? 'square-active' : ''}`}
       onClick={() => {
-      if(sq.id === 2){
-        setShowInfo(!showInfo); // alterna visibilidad
+      
+           if(sq.id === 1){
+        //Descargar CV en PDF
+      }
+      
+        if(sq.id === 2){
+        setShowInfo(!showInfo);
+      }
+
+           if(sq.id === 3){
+        console.log("Habilidades");
+            navigate('/skills')
+      }
+
+           if(sq.id === 4){
+        navigate('/proyectos')
       }
     }} // Solo el 2º cuadrado
         >
@@ -132,3 +149,4 @@ const App = () => {
 };
 
 export default App;
+

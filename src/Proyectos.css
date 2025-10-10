@@ -1,0 +1,118 @@
+.proyectos-container {
+  display: flex;
+  flex-direction: row; /* uno al lado del otro */
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #1d41a2, #4095d8);
+  font-family: sans-serif;
+}
+
+/* Panel izquierdo */
+.opciones {
+  flex: 1; /* 50% del espacio */
+  background-color: #2d6fb9;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente su contenido */
+  color: white;
+  font-weight: bold;
+  position: relative;
+}
+
+/* Botón volver */
+.btn-volver {
+  background: linear-gradient(180deg, #2eb9ff, #1476ff);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  padding: 12px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #0e3ca6;
+  transition: all 0.2s ease;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 20px;
+  left: 20px; /* siempre arriba a la izquierda */
+}
+
+.btn-volver:hover {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 #0e3ca6;
+}
+
+/* Grid de cajas */
+.cajas-opciones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 80px; /* separación del botón */
+}
+
+.cajas {
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+  transition: transform 0.2s ease;
+}
+
+.cajas:hover {
+  transform: scale(1.05);
+}
+
+.cajas-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Panel derecho */
+.proyectos {
+  flex: 1; /* 50% del espacio */
+  background-color: transparent;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+    flex-direction: column;
+  align-items: center; /* centra todo horizontalmente */
+  gap: 20px; /* espacio vertical entre elementos */
+  color: white;
+  font-size: 2rem;
+}
+
+.proyectos-img {
+  width: 100%; /* ocupa todo el ancho del contenedor */
+  max-width: 500px; /* opcional: limita el tamaño */
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* h2 y h3 alineados horizontalmente */
+.info-proyectos {
+  display: flex;
+  flex-direction: row;
+  gap: 15px; /* espacio entre h2 y h3 */
+  justify-content: center; /* centra los dos en el contenedor */
+  align-items: baseline; /* alinea por línea de base para que queden nivelados */
+  margin-bottom: 0;
+}
+
+/* p debajo de todo */
+.descripcion-proyectos p {
+  text-align: center; /* opcional: centrado */
+  max-width: 500px;
+}
+
