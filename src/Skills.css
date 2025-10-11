@@ -1,0 +1,122 @@
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+
+/* Columnas */
+.inicio {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* si querés que los hijos estén uno debajo de otro */
+  align-items: flex-start; /* o center según diseño */
+  justify-content: flex-start; /* ajusta según necesites */
+  width: 20%; /* según tu layout anterior */
+  height: 100%; /* ocupa todo el alto del contenedor padre */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+
+.selector-skills {
+    margin-top: 60px;
+  flex: 1; /* 👈 ocupa todo el espacio disponible dentro de .inicio */
+  width: 100%; /* llena el ancho de .inicio */
+  display: flex;
+  justify-content: center; /* centra contenido horizontalmente */
+  align-items: center; /* centra contenido verticalmente */
+
+  box-sizing: border-box;
+}
+
+
+.plantilla {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+.info-skills {
+  
+    /* Set a fixed size typical for an isolated skill section, or keep it relative */
+  width: 20%; /* Made slightly narrower to look like a stat pillar */
+  min-width: 80px; /* Ensure visibility on small screens */
+  height: 100%; /* Take up most of the parent height */
+
+  padding: 10px; /* Reduced padding for a tighter, cleaner look */
+  margin: 0 5px; /* Add slight separation from other elements */
+  
+  display: flex;
+  flex-direction: column; /* Changed to column to stack stat title and value */
+  align-items: center;
+  justify-content: space-around; /* Distribute content evenly */
+
+  /* Dark, textured background */
+  background: linear-gradient(180deg, #101015 0%, #000000 100%);
+  
+  /* Sharp, modern edges */
+  border-radius: 4px;
+  
+  /* Signature Blue/Gold border for definition and high-tech feel */
+  border-left: 3px solid #00b4ff; 
+  border-right: 3px solid #ffde54; 
+  
+  /* Deep shadow for an "inset" or "lifted" effect */
+  box-shadow: 
+    inset 0 0 10px rgba(0, 180, 255, 0.1), /* Inner blue glow */
+    0 4px 10px rgba(0, 0, 0, 0.8); /* Strong outer shadow */
+  
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+}
+
+.btn-volverS {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #1a1a1d 0%, #2e2e32 40%, #101012 100%);
+  color: #f5f5f5;
+  font-family: 'Orbitron', sans-serif; /* Fuente estilo gamer */
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: 2px solid #d4af37; /* dorado tipo FIFA */
+  border-radius: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover */
+.btn-volverS:hover {
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  color: #111;
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.8), 0 0 30px rgba(255, 215, 0, 0.4);
+  transform: scale(1.05);
+  border-color: #ffdd55;
+}
+/* Bloques dentro de plantilla */
+.plantilla-item {
+  width: 90%;
+  height: 20%;
+
+
+  display: flex;
+  align-items: center;
+ justify-content: space-evenly; 
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}

@@ -1,0 +1,97 @@
+/* --- FIFA-Style Selector Enhancement --- */
+
+.selector-carta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3vh;
+  height: 65vh; 
+  width: 95%; 
+  max-width: 550px; 
+  padding: 1.5rem; 
+  
+  /* Modern Dark Gradient with a subtle 'Carbon' feel */
+  background: linear-gradient(145deg, #1c1c20 0%, #0d0d10 100%);
+  border-radius: 15px; 
+  
+  /* Enhanced 'Glow' and Depth - Subtle Blue/Gold */
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(0, 180, 255, 0.2),
+    0 0 50px rgba(255, 215, 0, 0.2);
+    
+  color: #e0e0e0;
+  font-family: 'Orbitron', sans-serif;
+  border: 1px solid #333; 
+}
+
+/* --- Navigation Container --- */
+
+.selector-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* Reduced gap slightly for compact nav */
+  margin-bottom: 3vh; 
+  width: 100%;
+}
+
+/* --- Arrow/Button Styling (The Fix) --- */
+
+.flecha {
+  /* Cleaner Gold/Yellow Gradient */
+  background: linear-gradient(145deg, #ffde54 0%, #c49900 100%);
+  color: #0d0d10; 
+  border: none;
+  
+  /* FIX: Using 'rem' for padding to control size better than 'vw' */
+  padding: 0.6rem 1.2rem; 
+  
+  /* Setting a maximum size, but keeping a useful minimum */
+  min-width: 80px; 
+  max-width: 120px;
+  
+  border-radius: 6px; /* Slightly tighter corners for a smaller element */
+  
+  /* FIX: Using 'rem' or smaller 'vh' for font size */
+  font-size: 1.6vh; 
+  
+  font-weight: 800; 
+  cursor: pointer;
+  
+  /* Sharper Button Shadow with a defined line */
+  box-shadow: 
+    0 2px 5px rgba(0, 0, 0, 0.5),
+    0 0 15px rgba(255, 215, 0, 0.5); 
+  
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.flecha:hover {
+  transform: translateY(-2px) scale(1.05); 
+  /* Intense Glow on Hover */
+  box-shadow: 
+    0 4px 10px rgba(0, 0, 0, 0.7),
+    0 0 25px rgba(255, 215, 0, 0.8),
+    0 0 40px rgba(255, 230, 150, 0.5);
+}
+
+/* --- Name/Title Styling --- */
+
+.nombre {
+  font-size: 2vh; 
+  font-weight: 900; 
+  color: #00b4ff; 
+  text-transform: uppercase;
+  
+  /* Futuristic Digital Shadow/Glow */
+  text-shadow: 
+    0 0 5px rgba(0, 180, 255, 0.8),
+    0 0 15px rgba(0, 180, 255, 0.5);
+    
+  letter-spacing: 3px; 
+  padding-bottom: 0.5rem; 
+  border-bottom: 2px solid #ffde54; 
+}
