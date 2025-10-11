@@ -1,0 +1,70 @@
+.trofeos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.boton-volver {
+  align-self: flex-start;
+  margin-bottom: 20px;
+  background-color: #0070d1;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 0 #004a8c, 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.boton-volver:hover {
+  background-color: #1a8cff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #004a8c, 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.trofeos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  height: 80vh;
+  overflow-y: auto;
+}
+.trofeos .row {
+  display: flex;          /* Horizontal */
+  flex-direction: row;    /* Imágenes y descripción lado a lado */
+  align-items: center;    /* Centra verticalmente */
+  border-radius: 10px;
+  box-sizing: border-box;
+  gap: 20px;              /* Espacio entre imágenes y descripción */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Contenedor de imágenes */
+.trofeos .row .imagenes {
+  display: flex;
+  gap: 20px;
+}
+
+/* Estilo de cada imagen */
+.trofeos .row .imagenes img {
+  width: 10vh;
+  height: 10vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Descripción a la derecha de las imágenes */
+.trofeos .row .descripcion {
+  font-size: 16px;
+  text-align: left;
+  max-width: 600px;
+}
+

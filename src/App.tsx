@@ -58,10 +58,10 @@ const App = () => {
             Jaime Sesmero Verbo
           </div>       
          
-         <div className='logros'>
+         <div className='logros' onClick={() => {navigate('/trofeos')}}>
             <img src={Trofeo} height={30} width={30}  />{"    "}
             <img src={Star}  height={18} width={18} />{"    "}
-            2
+            4
         </div>
           
           <div className='hora'>

@@ -43,8 +43,7 @@
 .perfil {
   display: flex;
   align-items: center; 
-  gap: 8px;  
-  cursor: pointer;      
+  gap: 8px;       
 }
 
 .logros {
