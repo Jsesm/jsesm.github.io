@@ -10,67 +10,50 @@ import Python from './assets/python.svg';
 import Java from './assets/java.svg';
 import Css from './assets/css.svg';
 import Html from './assets/html.svg';
-import MySQL from './assets/mysql.svg';
-
-
-
+import MySQL from './assets/mysql.png';
+import Vite from './assets/vite.svg';
+import Angular from './assets/angular-icon.svg';
+import Flask from './assets/Flask.svg';
+import Spring from './assets/spring-3.svg';
+import Postman from './assets/Postman.svg';
+import Github from './assets/github.svg';
+import Visual from './assets/vscode.svg';
+import Docker from './assets/docker.svg';
+import BarraProgreso from './BarraProgreso.tsx';
 
 const Skills = () => {
   const navigate = useNavigate();
   const [nombreCarta, setNombreCarta] = useState("LENGUAJES");
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
 const herramientas = {
   LENGUAJES: {
-    1: Python,
-    2: "",
-    3: Java,
-    4: "",
-    5: "",
-    6: "",
-    7: Css,
-    8: "",
-    9: Html,
-    10: "",
-    11: ""
+    1: { nombre: "Python", imagen: Python, porcentaje: "80%" },
+    2: { nombre: "Css", imagen: Css, porcentaje: "60%" },
+    3: { nombre: "Java", imagen: Java, porcentaje: "90%" },
+    4: { nombre: "", imagen: "", porcentaje: "" },
+    5: { nombre: "Html", imagen: Html, porcentaje: "75%" },
   },
-   FRAMEWORKS: {
-    1: "",
-    2: "",
-    3: "",
-    4: "",
-    5: "",
-    6: "",
-    7: "",
-    8: "",
-    9: "",
-    10: "",
-    11: ""
+  FRAMEWORKS: {
+    1: { nombre: "React", imagen: React, porcentaje: "60%" },
+    2: { nombre: "Spring", imagen: Spring, porcentaje: "50%" },
+    3: { nombre: "Angular", imagen: Angular, porcentaje: "600%" },
+    4: { nombre: "", imagen: "", porcentaje: "" },
+    5: { nombre: "Flask", imagen: Flask, porcentaje: "45%" },
   },
   BBDD: {
-    1: "",
-    2: MySQL,
-    3: "",
-    4: "",
-    5: "",
-    6: "",
-    7: "",
-    8: "",
-    9: "",
-    10: "",
-    11: ""
+    1: { nombre: "", imagen: "", porcentaje: "" },
+    2: { nombre: "MySQL", imagen: MySQL, porcentaje: "75%" },
+    3: { nombre: "", imagen: "", porcentaje: "" },
+    4: { nombre: "", imagen: "", porcentaje: "" },
+    5: { nombre: "", imagen: "", porcentaje: "" },
   },
   TOOLS: {
-    1: "",
-    2: "",
-    3: "",
-    4: "",
-    5: "",
-    6: "",
-    7: "",
-    8: "",
-    9: "",
-    10: "",
-    11: ""
+    1: { nombre: "Postman", imagen: Postman, porcentaje: "85%" },
+    2: { nombre: "Vite", imagen: Vite, porcentaje: "60%" },
+    3: { nombre: "Visual", imagen: Visual, porcentaje: "95%" },
+    4: { nombre: "Github", imagen: Github, porcentaje: "85%" },
+    5: { nombre: "Docker", imagen: Docker, porcentaje: "30%" },
   }
 };
 
@@ -91,30 +74,54 @@ const herramientas = {
 
     <div className="plantilla">
       <div className="plantilla-item">
-        <Carta simbolo={herramientas[nombreCarta][3]} />
-        <Carta simbolo={herramientas[nombreCarta][7]} />
-        <Carta simbolo={herramientas[nombreCarta][1]} />
+        <Carta simbolo={herramientas[nombreCarta][5].imagen}
+          onMouseEnter={() => setHoverIndex(5)}
+          onMouseLeave={() => setHoverIndex(null)}
+        />
+
       </div>
       <div className="plantilla-item">
-        <Carta simbolo={herramientas[nombreCarta][5]} />
-        <Carta simbolo={herramientas[nombreCarta][2]} />
-        <Carta simbolo={herramientas[nombreCarta][9]} />
+        <Carta simbolo={herramientas[nombreCarta][4].imagen} 
+          onMouseEnter={() => setHoverIndex(4)}
+  onMouseLeave={() => setHoverIndex(null)}/>
+
       </div>
       <div className="plantilla-item">   
-        <Carta simbolo={herramientas[nombreCarta][8]} />
-        <Carta simbolo={herramientas[nombreCarta][4]} />
-        <Carta simbolo={herramientas[nombreCarta][11]} />
-        <Carta simbolo={herramientas[nombreCarta][6]} />
+        <Carta simbolo={herramientas[nombreCarta][3].imagen}
+          onMouseEnter={() => setHoverIndex(3)}
+  onMouseLeave={() => setHoverIndex(null)} />
+        <Carta simbolo={herramientas[nombreCarta][2].imagen}
+          onMouseEnter={() => setHoverIndex(2)}
+  onMouseLeave={() => setHoverIndex(null)} />
+
       </div>
       <div className="plantilla-item">
-        <Carta simbolo={herramientas[nombreCarta][10]} />
+        <Carta simbolo={herramientas[nombreCarta][1].imagen} 
+          onMouseEnter={() => setHoverIndex(1)}
+  onMouseLeave={() => setHoverIndex(null)}/>
       </div>
     </div>
 
-      <div className="info-skills">
-        <p>{nombreCarta}</p>
-      </div>
-    </div>
+<div className="info-skills">
+  {hoverIndex != null && herramientas[nombreCarta]?.[hoverIndex] ? (
+    <>
+      <img
+        src={herramientas[nombreCarta][hoverIndex].imagen}
+        alt={herramientas[nombreCarta][hoverIndex].nombre}
+        className="object-contain object-center w-full h-auto"
+      />
+      <p>{herramientas[nombreCarta][hoverIndex].nombre}</p>
+      <BarraProgreso porcentaje={herramientas[nombreCarta][hoverIndex].porcentaje} />
+    </>
+  ) : (
+    <p className="text-gray-300 text-sm italic text-center">
+      Pasa el ratón por encima de un {nombreCarta}
+    </p>
+  )}
+</div>
+
+</div>
+
   );
 };
 

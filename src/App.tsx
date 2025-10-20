@@ -48,9 +48,19 @@ const App = () => {
 
       <div className="header">
         <div className='contacto'>
-          <img src={Github} className="rrss" />
+
+          <a href="https://github.com/Jsesm" target="_blank" rel="noopener noreferrer">
+            <img src={Github} className="rrss" alt="GitHub" />
+          </a>
+
+ <a href="https://www.linkedin.com/in/jaime-sesmero-verbo-17247a38b/" target="_blank" rel="noopener noreferrer">
           <img src={Linkedin} className="rrss" />
-          <img src={Email} className="rrss" />
+          </a>
+
+
+<a href="mailto:j.sesmero.v@gmail.com?subject=Hola&body=Me%20interesa%20contactarte">
+  <img src={Email} className="rrss" alt="Email" />
+</a>
           </div> 
 
           <div className='perfil'>
@@ -84,7 +94,10 @@ const App = () => {
       onClick={() => {
       
            if(sq.id === 1){
-        //Descargar CV en PDF
+        /*const link = document.createElement("a");
+        link.href = "../cv/CV.pdf";
+        link.download = "CV_JaimeSesmero.pdf";
+        link.click();*/
       }
       
         if(sq.id === 2){

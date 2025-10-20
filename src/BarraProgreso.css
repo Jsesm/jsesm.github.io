@@ -1,0 +1,24 @@
+.barra-container {
+  width: 100%;
+  background-color: #e0e0e0;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 6px;
+}
+
+.barra-relleno {
+  background-color: #4caf50;
+  height: 100%;
+  transition: width 0.3s ease-in-out;
+}
+
+.barra-texto {
+  position: absolute;
+  right: 8px;
+  top: 0;
+  font-size: 12px;
+  color: #fff;
+  line-height: 20px;
+}
