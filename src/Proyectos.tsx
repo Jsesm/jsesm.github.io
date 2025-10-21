@@ -59,12 +59,12 @@ function Proyectos() {
 
 <div className='proyectos'>
   {img && (
-  <img src={img} alt="Proyecto" className="proyectos-img" height={400} width={400} />
+  <img src={img} alt="Proyecto" className="proyectos-img" height={300} width={300} />
 )}
 
   <div className='info-proyectos'>
     <h2>{nombre}</h2>
-    <h3>{tipo}</h3>
+    <h3 className={`tipo ${tipo.slice(0, -1)}`}>{tipo}</h3>
   </div>
 
   <div className='descripcion-proyectos'>

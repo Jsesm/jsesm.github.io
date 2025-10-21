@@ -15,7 +15,7 @@ import SobreMi from './assets/sobremi.png';
 import ESI from './assets/ESI.jpg';
 import Balon from './assets/balon.jpg';
 import Ordenador from './assets/ordenador.jpg';
-
+import Jaime from './assets/Jaime.png';
 
   
 
@@ -128,7 +128,7 @@ const App = () => {
     </div>
     {showInfo && (
     <div className="informacion"> 
-      <img src={Github} height={250} width={250}/>
+      <img src={Jaime} height={250} width={250}/>
       <div className="texto-informacion">
       <h3>Jaime Sesmero Verbo</h3>
       <p>Soy un estudiante de Ingeniería Informática en la Escuela Superior de Informática de Ciudad Real.
@@ -137,7 +137,7 @@ const App = () => {
       </div>
 
       <div className="info-extra">
-        <div className="Right now">
+        <div className="Rightnow">
           <h1>Ahora mismo</h1>
           <div className="logros">
             <img src={ESI} height={40} width={50} style={{ marginLeft: '20px' }}/>

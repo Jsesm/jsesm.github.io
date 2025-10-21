@@ -146,7 +146,6 @@
   margin-left: 40px;
   margin-bottom: 20px;
   margin-right: 20px;
-  /* 🔽 Añade esto: */
   display: flex;
   flex-direction: row; /* organiza en columnas horizontales */
   justify-content: space-between; /* separa las columnas */
@@ -164,21 +163,63 @@
 .info-extra{
   flex: 1;
   background-color: #022782;
-  height: 100%;;
+  height: 100%;
 }
 
-
-
-
-
-
-
 /* Responsive móvil */
-@media (max-width: 650px) {
-  /* Cuadrados más grandes en móvil */
-  .square {
-    width: 20vw; /* un poco más grande */
-    height: 20vw;
-    font-size: 18px;
+@media (max-width: 800px) {
+ 
+
+  .app-container{
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    display:flex;
+    grid-template-columns: "";
+    grid-template-rows: "";
+    gap: 20px;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+    background: linear-gradient(180deg, #0941ae, #000c26);
   }
+
+  .header{
+    width: 100%;
+    height:20%;
+  }
+
+  .squares-block{
+    width: 100%;
+    height:30%;
+
+  }
+
+  .informacion{
+    width: 100%;
+    height:50%;
+    grid-column: "";
+    grid-row: "";
+    background-color:#1547aa;
+    opacity: 0.9;
+    min-height: 200px;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .info-extra{
+    display: none;
+  }
+
+
+
 }

@@ -76,18 +76,19 @@
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
+  cursor: pointer;
 }
 
 /* Panel derecho */
 .proyectos {
   flex: 1; /* 50% del espacio */
   background-color: transparent;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: center;
     flex-direction: column;
   align-items: center; /* centra todo horizontalmente */
-  gap: 20px; /* espacio vertical entre elementos */
+  gap: 10px; /* espacio vertical entre elementos */
   color: white;
   font-size: 2rem;
 }
@@ -108,6 +109,31 @@
   justify-content: center; /* centra los dos en el contenedor */
   align-items: baseline; /* alinea por línea de base para que queden nivelados */
   margin-bottom: 0;
+  border: 2px solid white;
+
+}
+
+.info-proyectos h2 {
+  white-space: nowrap;     /* Evita saltos de línea */
+  overflow: hidden; 
+  font-weight: bold;
+}
+
+.tipo.C {
+  color: #000000; /* rojo */
+}
+
+.tipo.Rede {
+  color: yellow; /* azul */
+}
+
+.tipo.Segurida {
+  color: #2ecc71; /* verde */
+}
+
+.descripcion-proyectos{
+  border: 2px solid white;
+  
 }
 
 /* p debajo de todo */
@@ -115,4 +141,20 @@
   text-align: center; /* opcional: centrado */
   max-width: 500px;
 }
+.btn-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* espacio entre el ícono y el texto */
+  background-color: #24292e; /* color GitHub */
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
 
