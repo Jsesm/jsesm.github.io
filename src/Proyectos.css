@@ -14,7 +14,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra horizontalmente su contenido */
+  align-items: center; 
   color: white;
   font-weight: bold;
   position: relative;
@@ -79,67 +79,74 @@
   cursor: pointer;
 }
 
-/* Panel derecho */
+
 .proyectos {
-  flex: 1; /* 50% del espacio */
+  flex: 1; 
   background-color: transparent;
   padding: 10px;
   display: flex;
   justify-content: center;
     flex-direction: column;
-  align-items: center; /* centra todo horizontalmente */
-  gap: 10px; /* espacio vertical entre elementos */
+  align-items: center; 
+  gap: 10px;
   color: white;
   font-size: 2rem;
 }
 
 .proyectos-img {
-  width: 100%; /* ocupa todo el ancho del contenedor */
-  max-width: 500px; /* opcional: limita el tamaño */
+  width: 100%;
+  max-width: 500px; 
   height: auto;
   border-radius: 12px;
   object-fit: cover;
+  height: 300px; 
+  width: 300px; 
+  
 }
 
 /* h2 y h3 alineados horizontalmente */
 .info-proyectos {
   display: flex;
   flex-direction: row;
-  gap: 15px; /* espacio entre h2 y h3 */
-  justify-content: center; /* centra los dos en el contenedor */
-  align-items: baseline; /* alinea por línea de base para que queden nivelados */
+  gap: 15px; 
+  justify-content: center; 
+  align-items: center; 
   margin-bottom: 0;
-  border: 2px solid white;
+  
 
 }
 
 .info-proyectos h2 {
-  white-space: nowrap;     /* Evita saltos de línea */
-  overflow: hidden; 
+  white-space: nowrap;
+  overflow: hidden;
   font-weight: bold;
 }
 
 .tipo.C {
-  color: #000000; /* rojo */
+  color: #000000; 
+
 }
 
 .tipo.Rede {
-  color: yellow; /* azul */
+  color: yellow; 
+
 }
 
 .tipo.Segurida {
-  color: #2ecc71; /* verde */
+  color: #2ecc71;
+
 }
 
 .descripcion-proyectos{
   border: 2px solid white;
-  
+  background-color: #aeeefc ;
 }
 
-/* p debajo de todo */
+
 .descripcion-proyectos p {
   text-align: center; /* opcional: centrado */
   max-width: 500px;
+  color:#000000;
 }
 .btn-github {
   display: inline-flex;
@@ -158,3 +165,91 @@
 }
 
 
+/* Responsive móvil */
+@media (max-width: 800px) {
+
+
+
+.proyectos-container {
+  display: flex;
+  flex-direction: column; 
+  width: 100vw;
+  height: 100vh;
+}
+
+.opciones, .proyectos {
+  height: 50%;
+  width: 100%;
+}
+
+.cajas-opciones {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+
+.proyectos-img {
+  width: 100%; /* ocupa todo el ancho del contenedor */
+  max-width: 500px; /* opcional: limita el tamaño */
+  height: 30%;
+  border-radius: 12px;
+  object-fit:contain;
+}
+
+
+.info-proyectos {
+  display: flex;
+  flex-direction: row;
+  gap: 15px; /* espacio entre h2 y h3 */
+  justify-content: center; /* centra los dos en el contenedor */
+  align-items: baseline; /* alinea por línea de base para que queden nivelados */
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.info-proyectos h2 {
+  display: block; 
+  font-size: clamp(19px, 2vw, 20px); 
+  word-wrap: break-word;             
+  overflow-wrap: break-word;         
+  text-overflow: ellipsis;           
+  white-space: normal;               
+  line-height: 1.3;                  
+  margin: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.descripcion-proyectos p {
+
+  height:20%;
+  display: block; 
+  font-size: clamp(15px, 2vw, 20px); 
+  word-wrap: break-word;             
+  overflow-wrap: break-word;         
+  text-overflow: ellipsis;           
+  white-space: normal;               
+  line-height: 1.3;                  
+  margin: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.btn-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* espacio entre el ícono y el texto */
+  background-color: #24292e; /* color GitHub */
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+
+
+}

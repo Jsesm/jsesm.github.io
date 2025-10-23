@@ -29,14 +29,14 @@ function Proyectos() {
 
   return (
     <div className="proyectos-container">
-      {/* Botón arriba a la izquierda */}
+      
 
       <div className='opciones'>
       <button className="btn-volver" onClick={() => navigate('/')}>
         ⬅ Volver
       </button>
 
-      {/* Cuadrados debajo */}
+      
       <div className="cajas-opciones">
         {squares.map((sq) => (
           <div key={sq.id} className="cajas"
@@ -59,12 +59,12 @@ function Proyectos() {
 
 <div className='proyectos'>
   {img && (
-  <img src={img} alt="Proyecto" className="proyectos-img" height={300} width={300} />
+  <img src={img} alt="Proyecto" className="proyectos-img" />
 )}
 
   <div className='info-proyectos'>
     <h2>{nombre}</h2>
-    <h3 className={`tipo ${tipo.slice(0, -1)}`}>{tipo}</h3>
+    <h2 className={`tipo ${tipo.slice(0, -1)}`}>{tipo}</h2>
   </div>
 
   <div className='descripcion-proyectos'>

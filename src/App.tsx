@@ -22,7 +22,7 @@ import Jaime from './assets/Jaime.png';
 const App = () => {
   const navigate = useNavigate()
   const [hora, setHora] = useState(new Date());
-  const [showInfo, setShowInfo] = useState(true);
+  const [showInfo] = useState(true);
   
   
   useEffect(() => {
@@ -100,9 +100,7 @@ const App = () => {
         link.click();*/
       }
       
-        if(sq.id === 2){
-        setShowInfo(!showInfo);
-      }
+
 
            if(sq.id === 3){
         console.log("Habilidades");
