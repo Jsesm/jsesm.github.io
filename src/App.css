@@ -1,8 +1,7 @@
 /* Contenedor principal */
 .app-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 20px;
   height: 100vh;
   padding: 20px;
@@ -14,10 +13,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  grid-column: span 5; /* Ocupa las 5 columnas */
   width: 100%;  
-
-  height: 50px;      /* Reduce la altura */
+  height: 10%;      
   padding: 0 10px;
 }
 
@@ -63,7 +60,11 @@
 /* Bloque de cuadrados */
 .squares-block {
   display: flex;
+  width: 100%;
+  margin-top: 10%;
+  height: 20%;
   gap: 10px;
+  margin-left: 10%;
   justify-content: start;
   align-items: center;
   position: relative;
@@ -135,15 +136,13 @@
 }
 
 .informacion {
-  grid-column: span 5;
-  grid-row: 3 / span 2; /* Ocupa las filas 3 y 4 */
+  height: 50%;
   background-color:#1547aa;
-  opacity: 0.9;;
+  opacity: 0.9;
   min-height: 200px;
   padding: 20px;
   border-radius: 12px;
-  margin-top: 20px;
-  margin-left: 40px;
+  margin-top: 5%;
   margin-bottom: 20px;
   margin-right: 20px;
   display: flex;
@@ -153,11 +152,28 @@
   gap: 20px; /* espacio entre columnas */
 }
 
+    .informacion p, h3{
+ display: block; 
+  font-size: clamp(12px, 2vw, 20px); 
+  word-wrap: break-word;             
+  overflow-wrap: break-word;         
+  text-overflow: ellipsis;           
+  white-space: normal;               
+  line-height: 1.3;                  
+  margin: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+    }
 
 .texto-informacion {
   flex: 1; /* cada bloque de texto toma igual espacio */
   color: white;
   width: 10%;
+}
+
+.foto-Jaime{
+  height:250px;
+  width: 250px;
 }
 
 .info-extra{
@@ -175,31 +191,129 @@
     height: 100%;
     flex-direction: column;
     display:flex;
-    grid-template-columns: "";
-    grid-template-rows: "";
     gap: 20px;
     height: 100vh;
     padding: 20px;
     position: relative;
     background: linear-gradient(180deg, #0941ae, #000c26);
   }
+.header {
+  order: 3;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  padding: 20px;
+  background: linear-gradient(180deg, #0941ae, #000c26);
+  color: white;
+  height: 30%;
+}
 
-  .header{
-    width: 100%;
-    height:20%;
-  }
 
-  .squares-block{
-    width: 100%;
-    height:30%;
+.contacto {
+  order: 1;
+}
 
-  }
+.perfil {
+  order: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.logros {
+  order: 2; /* Mismo nivel que perfil */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hora {
+  order: 3;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.perfil,
+.logros {
+  justify-content: center;
+}
+
+/* Estilo para los íconos */
+.rrss {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.squares-block {
+  order: 2;
+  display: flex;
+  flex-wrap: wrap; /* Permite que bajen de línea si no caben */
+  justify-content: center; /* Centra los cuadrados en el ancho */
+  align-items: center;
+  gap: 15px; /* Espacio entre cuadrados */
+  width: 100%;
+  height: 30%; 
+  padding: 2%;
+  box-sizing: border-box;
+  margin-top: 0;
+  position: relative;
+  margin-left: 0;
+}
+
+.square {
+  aspect-ratio: 1 / 1; 
+  flex: 1 1 120px; 
+  width: 10%;
+  height: 10%;
+  max-height: 170px;
+  min-height: 70px;
+  max-width: 100px; 
+  min-width: 70px; 
+  background: #001d61;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(14px, 2vw, 24px); 
+  color: white;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+.square:hover {
+  width: 10%;   
+  height: 10%;
+  max-width: 100px;
+  max-height: 170px;
+  min-width: 70px;
+  min-height: 70px;
+  transform: 1;
+  background-color: #003399;
+}
+
+.square-active {
+  order:4;
+  max-width: 100%; 
+  min-width: 70px;  
+   
+}
+.tooltip{
+  display: none;
+}
+
 
   .informacion{
+    order:1;
     width: 100%;
-    height:50%;
-    grid-column: "";
-    grid-row: "";
+    height:40%;
     background-color:#1547aa;
     opacity: 0.9;
     min-height: 200px;
@@ -216,9 +330,22 @@
     gap: 20px;
   }
 
-  .info-extra{
-    display: none;
-  }
+  .foto-Jaime{
+  width: 30%;  
+  height: 100%;          
+  aspect-ratio: 1 / 1;   
+  object-fit: cover;     
+  border-radius: 20px;   
+  max-width: 250px;      
+  min-width: 120px;      
+}
+
+.info-extra{
+
+  display: none;
+}
+
+
 
 
 

@@ -128,11 +128,14 @@ const App = () => {
     </div>
     {showInfo && (
     <div className="informacion"> 
-      <img src={Jaime} height={250} width={250}/>
+      <img src={Jaime} className="foto-Jaime"/>
       <div className="texto-informacion">
       <h3>Jaime Sesmero Verbo</h3>
-      <p>Soy un estudiante de Ingeniería Informática en la Escuela Superior de Informática de Ciudad Real.
-        <br></br><br></br> Me apasiona el desarrollo web y móvil,y siempre estoy buscando aprender nuevas tecnologías y mejorar mis habilidades.
+      <p> Soy un apasionado del desarrollo web tanto frontend como
+en backend. Me encanta aprender y asumir nuevos retos
+que me ayuden a mejorar mis habilidades. En mi tiempo
+libre me gusta explorar nuevas tecnologías para mejorar y
+estar al día de las novedades.
       </p>
       </div>
 
@@ -145,7 +148,7 @@ const App = () => {
           </div>
           
           </div>
-                  <div className="Gustos">
+          <div className="Gustos">
           <h1 style={{ marginTop: '20px' }}>Gustos</h1>
           <div className="logros">
             <img src={Balon} height={50} width={50} style={{ marginLeft: '20px' }}/>
