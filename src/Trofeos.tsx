@@ -27,13 +27,13 @@ const Skills = () => {
     {
       id: 2,
       title: "MHIPOII",
-      description: "Matrícula de Honor en Interacción Persona Ordenador II (2024)",
+      description: "Matrícula de Honor en Interacción Persona Ordenador II (2025)",
       images: [ESI,Trofeo],
     },
     {
       id: 3,
       title: "MHDyG",
-      description: "Matrícula de Honor en Diseño y Gestión de Redes (2024)",
+      description: "Matrícula de Honor en Diseño y Gestión de Redes (2025)",
       images: [ESI, Trofeo],
     },
 

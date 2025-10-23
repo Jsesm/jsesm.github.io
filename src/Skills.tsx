@@ -19,6 +19,7 @@ import Postman from './assets/Postman.svg';
 import Github from './assets/github.svg';
 import Visual from './assets/vscode.svg';
 import Docker from './assets/docker.svg';
+import Nada from './assets/fondo.png';
 import BarraProgreso from './BarraProgreso.tsx';
 
 const Skills = () => {
@@ -31,22 +32,22 @@ const herramientas = {
     1: { nombre: "Python", imagen: Python, porcentaje: "80%" },
     2: { nombre: "Css", imagen: Css, porcentaje: "60%" },
     3: { nombre: "Java", imagen: Java, porcentaje: "90%" },
-    4: { nombre: "", imagen: "", porcentaje: "" },
+    4: { nombre: "", imagen: Nada, porcentaje: "" },
     5: { nombre: "Html", imagen: Html, porcentaje: "75%" },
   },
   FRAMEWORKS: {
     1: { nombre: "React", imagen: React, porcentaje: "60%" },
     2: { nombre: "Spring", imagen: Spring, porcentaje: "50%" },
-    3: { nombre: "Angular", imagen: Angular, porcentaje: "600%" },
-    4: { nombre: "", imagen: "", porcentaje: "" },
+    3: { nombre: "Angular", imagen: Angular, porcentaje: "60%" },
+    4: { nombre: "", imagen: Nada, porcentaje: "" },
     5: { nombre: "Flask", imagen: Flask, porcentaje: "45%" },
   },
   BBDD: {
-    1: { nombre: "", imagen: "", porcentaje: "" },
+    1: { nombre: "", imagen: Nada, porcentaje: "" },
     2: { nombre: "MySQL", imagen: MySQL, porcentaje: "75%" },
-    3: { nombre: "", imagen: "", porcentaje: "" },
-    4: { nombre: "", imagen: "", porcentaje: "" },
-    5: { nombre: "", imagen: "", porcentaje: "" },
+    3: { nombre: "", imagen: Nada, porcentaje: "" },
+    4: { nombre: "", imagen: Nada, porcentaje: "" },
+    5: { nombre: "", imagen: Nada, porcentaje: "" },
   },
   TOOLS: {
     1: { nombre: "Postman", imagen: Postman, porcentaje: "85%" },
@@ -108,14 +109,14 @@ const herramientas = {
       <img
         src={herramientas[nombreCarta][hoverIndex].imagen}
         alt={herramientas[nombreCarta][hoverIndex].nombre}
-        className="object-contain object-center w-full h-auto"
+        className="imagen-blanco"
       />
       <p>{herramientas[nombreCarta][hoverIndex].nombre}</p>
       <BarraProgreso porcentaje={herramientas[nombreCarta][hoverIndex].porcentaje} />
     </>
   ) : (
     <p className="text-gray-300 text-sm italic text-center">
-      Pasa el ratón por encima de un {nombreCarta}
+      Pasa el ratón por encima de una carta o Dale a la Flecha
     </p>
   )}
 </div>

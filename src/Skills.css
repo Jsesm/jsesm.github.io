@@ -4,6 +4,7 @@
   align-items: stretch;
   height: 100vh;
   width: 100%;
+  flex-direction: column;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -14,31 +15,27 @@
 .inicio {
   position: relative;
   display: flex;
-  flex-direction: column; /* si querés que los hijos estén uno debajo de otro */
-  align-items: flex-start; /* o center según diseño */
-  justify-content: flex-start; /* ajusta según necesites */
-  width: 20%; /* según tu layout anterior */
-  height: 100%; /* ocupa todo el alto del contenedor padre */
-  padding: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+  width: 100%; 
+  height: 20%; 
   box-sizing: border-box;
+
 }
-
-
 
 .selector-skills {
-    margin-top: 60px;
-  flex: 1; /* 👈 ocupa todo el espacio disponible dentro de .inicio */
-  width: 100%; /* llena el ancho de .inicio */
+  flex: 1; 
+  width: 100%; 
   display: flex;
-  justify-content: center; /* centra contenido horizontalmente */
-  align-items: center; /* centra contenido verticalmente */
-
+  justify-content: center; 
+  align-items: center;
   box-sizing: border-box;
 }
 
-
 .plantilla {
-  width: 60%;
+  width: 100%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -46,38 +43,23 @@
   padding: 20px;
 }
 .info-skills {
-  
-    /* Set a fixed size typical for an isolated skill section, or keep it relative */
-  width: 20%; /* Made slightly narrower to look like a stat pillar */
-  min-width: 80px; /* Ensure visibility on small screens */
-  height: 100%; /* Take up most of the parent height */
-
-  padding: 6px; /* Reduced padding for a tighter, cleaner look */
-  margin: 0 5px; /* Add slight separation from other elements */
-  
+  border: 2px solid #b8860b;
+  position: absolute;
+  width: 20%;
+  height: 60%;
+  padding: 10px; 
   display: flex;
-  flex-direction: column; /* Changed to column to stack stat title and value */
+  flex-direction: column; 
   align-items: center;
-  justify-content: center; /* Distribute content evenly */
-
-  /* Dark, textured background */
-  background: grey;
-  
-  /* Sharp, modern edges */
+  justify-content: center; 
+  background: white;
+  opacity: 0.6;
   border-radius: 4px;
-  
-  /* Signature Blue/Gold border for definition and high-tech feel */
-  border-left: 3px solid #00b4ff; 
-  border-right: 3px solid #ffde54; 
-  
-  /* Deep shadow for an "inset" or "lifted" effect */
-  box-shadow: 
-    inset 0 0 10px rgba(0, 180, 255, 0.1), /* Inner blue glow */
-    0 4px 10px rgba(0, 0, 0, 0.8); /* Strong outer shadow */
-  
-  color: #fff;
+  color: black;
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
+  top:20%;
+  left:10px;
 }
 
 .info-skills img {
@@ -105,7 +87,6 @@
   transition: all 0.3s ease;
 }
 
-/* Efecto hover */
 .btn-volverS:hover {
   background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
   color: #111;
@@ -115,14 +96,47 @@
 }
 /* Bloques dentro de plantilla */
 .plantilla-item {
-  width: 90%;
+  width: 100%;
   height: 20%;
-
-
   display: flex;
   align-items: center;
- justify-content: space-evenly; 
+  justify-content: space-evenly; 
   color: white;
   font-weight: bold;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+.imagen-blanco{
+  background-color: #e0e0e0
+}
+
+@media (max-width: 600px) {
+
+
+.selector-skills {
+margin-top: 25%;
+}
+  
+
+.info-skills {
+  height: 30%;
+  top:30%;
+}
+
+.info-skills p {
+
+  display: block; 
+  font-size: clamp(11px, 2vw, 20px); 
+  word-wrap: break-word;             
+  overflow-wrap: break-word;         
+  text-overflow: ellipsis;           
+  white-space: normal;               
+  line-height: 1.3;                  
+  margin: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
 }

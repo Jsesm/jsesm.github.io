@@ -1,8 +1,8 @@
 .carta-container {
   position: relative;
-  height: 100%;          /* 👈 se adapta al alto del contenedor padre */
-  width: auto;           /* 👈 el ancho se calcula automáticamente */
-  aspect-ratio: 2 / 3;   /* mantiene la proporción tipo carta */
+  height: 100%;          
+  width: auto;           
+  aspect-ratio: 2 / 3;   
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
@@ -25,9 +25,9 @@
 
 .carta-simbolo {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  height: 40%;      /* se adapta también por alto */
+  height: 40%;      
   width: auto;      /* mantiene proporción */
   transform: translate(-50%, -50%);
   pointer-events: none;

@@ -86,7 +86,7 @@
   padding: 10px;
   display: flex;
   justify-content: center;
-    flex-direction: column;
+  flex-direction: column;
   align-items: center; 
   gap: 10px;
   color: white;
@@ -144,15 +144,15 @@
 
 
 .descripcion-proyectos p {
-  text-align: center; /* opcional: centrado */
+  text-align: center; 
   max-width: 500px;
   color:#000000;
 }
 .btn-github {
   display: inline-flex;
   align-items: center;
-  gap: 8px; /* espacio entre el ícono y el texto */
-  background-color: #24292e; /* color GitHub */
+  gap: 8px; 
+  background-color: #24292e; 
   color: white;
   font-weight: 600;
   text-decoration: none;
@@ -189,8 +189,8 @@
 
 
 .proyectos-img {
-  width: 100%; /* ocupa todo el ancho del contenedor */
-  max-width: 500px; /* opcional: limita el tamaño */
+  width: 100%; 
+  max-width: 500px; 
   height: 30%;
   border-radius: 12px;
   object-fit:contain;
@@ -200,9 +200,9 @@
 .info-proyectos {
   display: flex;
   flex-direction: row;
-  gap: 15px; /* espacio entre h2 y h3 */
-  justify-content: center; /* centra los dos en el contenedor */
-  align-items: baseline; /* alinea por línea de base para que queden nivelados */
+  gap: 15px; 
+  justify-content: center;
+  align-items: baseline; 
   margin-bottom: 0;
   text-align: center;
 }
@@ -221,7 +221,6 @@
 }
 
 .descripcion-proyectos p {
-
   height:20%;
   display: block; 
   font-size: clamp(15px, 2vw, 20px); 
@@ -237,7 +236,7 @@
 .btn-github {
   display: inline-flex;
   align-items: center;
-  gap: 8px; /* espacio entre el ícono y el texto */
+  gap: 8px; 
   background-color: #24292e; /* color GitHub */
   color: white;
   font-weight: 600;

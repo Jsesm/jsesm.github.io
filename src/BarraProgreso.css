@@ -6,6 +6,7 @@
   overflow: hidden;
   position: relative;
   margin-top: 6px;
+  align-items: center;
 }
 
 .barra-relleno {
@@ -19,6 +20,6 @@
   right: 8px;
   top: 0;
   font-size: 12px;
-  color: #fff;
+  color: black;
   line-height: 20px;
 }
