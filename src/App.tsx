@@ -71,7 +71,7 @@ const App = () => {
          <div className='logros' onClick={() => {navigate('/trofeos')}}>
             <img src={Trofeo} height={30} width={30}  />{"    "}
             <img src={Star}  height={18} width={18} />{"    "}
-            4
+            5
         </div>
           
           <div className='hora'>

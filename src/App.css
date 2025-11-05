@@ -276,7 +276,7 @@
   min-height: 70px;
   max-width: 100px; 
   min-width: 70px; 
-  background: #001d61;
+  background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;

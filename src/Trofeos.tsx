@@ -4,7 +4,7 @@ import JuaneloTurriano from './assets/juanelo.jpeg';
 import Trofeo from './assets/trophy.svg'; // Ejemplo segunda imagen
 import ESI from './assets/ESI.jpg';
 import Cambridge from './assets/cambridge.png'
-
+import Hackathon from './assets/hackathon.png'
 const Skills = () => {
   const navigate = useNavigate();
  
@@ -36,6 +36,13 @@ const Skills = () => {
       description: "Matrícula de Honor en Diseño y Gestión de Redes (2025)",
       images: [ESI, Trofeo],
     },
+    {
+      id: 4,
+      title: "Hackathon",
+      description: "3º puesto en Hackathon Santa Tecla (2025)",
+      images: [Hackathon, Trofeo],
+    },
+    
 
   ];
 
