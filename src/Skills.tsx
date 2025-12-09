@@ -16,45 +16,54 @@ import Angular from './assets/angular-icon.svg';
 import Flask from './assets/Flask.svg';
 import Spring from './assets/spring-3.svg';
 import Postman from './assets/Postman.svg';
-import Github from './assets/github.svg';
-import Visual from './assets/vscode.svg';
+import Github from './assets/githubblack.png';
+import Socket from './assets/Socket-io.png';
 import Docker from './assets/docker.svg';
-import Nada from './assets/fondo.png';
-import BarraProgreso from './BarraProgreso.tsx';
+import Javascript from './assets/Javascript.png'
+import Typescript from './assets/Typescript.png'
+import Nada from './assets/fondo.png'
+import Nodejs from './assets/nodejs.svg'
+import firestore from './assets/firestore.svg'
+import linux from './assets/linux.png'
+import wireshark from './assets/wireshark.png'
 
 const Skills = () => {
   const navigate = useNavigate();
   const [nombreCarta, setNombreCarta] = useState("LENGUAJES");
-  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+
 
 const herramientas = {
   LENGUAJES: {
-    1: { nombre: "Python", imagen: Python, porcentaje: "80%" },
-    2: { nombre: "Css", imagen: Css, porcentaje: "60%" },
-    3: { nombre: "Java", imagen: Java, porcentaje: "90%" },
-    4: { nombre: "", imagen: Nada, porcentaje: "" },
-    5: { nombre: "Html", imagen: Html, porcentaje: "75%" },
+    1: { nombre: "Python", imagen: Python},
+    2: { nombre: "Css", imagen: Css},
+    3: { nombre: "Java", imagen: Java},
+    4: { nombre: "Javascript", imagen: Javascript},
+    5: { nombre: "Html", imagen: Html},
+    6: { nombre: "Typescript", imagen: Typescript},
   },
   FRAMEWORKS: {
-    1: { nombre: "React", imagen: React, porcentaje: "60%" },
-    2: { nombre: "Spring", imagen: Spring, porcentaje: "50%" },
-    3: { nombre: "Angular", imagen: Angular, porcentaje: "60%" },
-    4: { nombre: "", imagen: Nada, porcentaje: "" },
-    5: { nombre: "Flask", imagen: Flask, porcentaje: "45%" },
+    1: { nombre: "React", imagen: React},
+    2: { nombre: "Spring", imagen: Spring},
+    3: { nombre: "Angular", imagen: Angular},
+    4: { nombre: "Node.js", imagen: Nodejs},
+    5: { nombre: "Flask", imagen: Flask},
+    6: { nombre: "React Native", imagen: React},
   },
   BBDD: {
-    1: { nombre: "", imagen: Nada, porcentaje: "" },
-    2: { nombre: "MySQL", imagen: MySQL, porcentaje: "75%" },
-    3: { nombre: "", imagen: Nada, porcentaje: "" },
-    4: { nombre: "", imagen: Nada, porcentaje: "" },
-    5: { nombre: "", imagen: Nada, porcentaje: "" },
+    1: { nombre: "", imagen: Nada},
+    2: { nombre: "MySQL", imagen: MySQL},
+    3: { nombre: "Firestore", imagen: firestore},
+    4: { nombre: "", imagen: Nada},
+    5: { nombre: "", imagen: Nada},
+    6: { nombre: "", imagen: Nada},
   },
   TOOLS: {
-    1: { nombre: "Postman", imagen: Postman, porcentaje: "85%" },
-    2: { nombre: "Vite", imagen: Vite, porcentaje: "60%" },
-    3: { nombre: "Visual", imagen: Visual, porcentaje: "95%" },
-    4: { nombre: "Github", imagen: Github, porcentaje: "85%" },
-    5: { nombre: "Docker", imagen: Docker, porcentaje: "30%" },
+    1: { nombre: "Postman", imagen: Postman},
+    2: { nombre: "Wireshark", imagen: wireshark},
+    3: { nombre: "Socket.io", imagen: Socket},
+    4: { nombre: "Github", imagen: Github},
+    5: { nombre: "Docker", imagen: Docker},
+    6: { nombre: "Entornos linux", imagen: linux},
   }
 };
 
@@ -76,50 +85,39 @@ const herramientas = {
     <div className="plantilla">
       <div className="plantilla-item">
         <Carta simbolo={herramientas[nombreCarta][5].imagen}
-          onMouseEnter={() => setHoverIndex(5)}
-          onMouseLeave={() => setHoverIndex(null)}
+          nombre={herramientas[nombreCarta][5].nombre}
+        
+        />
+
+        <Carta simbolo={herramientas[nombreCarta][6].imagen}
+          nombre={herramientas[nombreCarta][6].nombre}
+        
         />
 
       </div>
       <div className="plantilla-item">
         <Carta simbolo={herramientas[nombreCarta][4].imagen} 
-          onMouseEnter={() => setHoverIndex(4)}
-  onMouseLeave={() => setHoverIndex(null)}/>
+        nombre={herramientas[nombreCarta][4].nombre}
+          />
 
       </div>
       <div className="plantilla-item">   
         <Carta simbolo={herramientas[nombreCarta][3].imagen}
-          onMouseEnter={() => setHoverIndex(3)}
-  onMouseLeave={() => setHoverIndex(null)} />
+        nombre={herramientas[nombreCarta][3].nombre}
+          />
         <Carta simbolo={herramientas[nombreCarta][2].imagen}
-          onMouseEnter={() => setHoverIndex(2)}
-  onMouseLeave={() => setHoverIndex(null)} />
+        nombre={herramientas[nombreCarta][2].nombre}
+        />
 
       </div>
       <div className="plantilla-item">
         <Carta simbolo={herramientas[nombreCarta][1].imagen} 
-          onMouseEnter={() => setHoverIndex(1)}
-  onMouseLeave={() => setHoverIndex(null)}/>
+        nombre={herramientas[nombreCarta][1].nombre}
+          />
       </div>
     </div>
 
-<div className="info-skills">
-  {hoverIndex != null && herramientas[nombreCarta]?.[hoverIndex] ? (
-    <>
-      <img
-        src={herramientas[nombreCarta][hoverIndex].imagen}
-        alt={herramientas[nombreCarta][hoverIndex].nombre}
-        className="imagen-blanco"
-      />
-      <p>{herramientas[nombreCarta][hoverIndex].nombre}</p>
-      <BarraProgreso porcentaje={herramientas[nombreCarta][hoverIndex].porcentaje} />
-    </>
-  ) : (
-    <p className="text-gray-300 text-sm italic text-center">
-      Pasa el ratón por encima de una carta o Dale a la Flecha
-    </p>
-  )}
-</div>
+
 
 </div>
 

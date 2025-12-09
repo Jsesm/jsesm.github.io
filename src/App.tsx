@@ -8,14 +8,15 @@ import Linkedin from './assets/linkedin.svg';
 import Email from './assets/email.svg';
 import Trofeo from './assets/trophy.svg';
 import Star from './assets/star.svg';
-import Fifa from './assets/fifa.jpg';
-import Fortnite from './assets/fortnite.jpg';
+import HardSkills from './assets/hardskills.png';
+import Proyectos from './assets/proyectos.png';
 import CV from './assets/cvJSV.png';
 import SobreMi from './assets/sobremi.png';
 import ESI from './assets/ESI.jpg';
-import Balon from './assets/balon.jpg';
-import Ordenador from './assets/ordenador.jpg';
+import Balon from './assets/balon.png';
 import Jaime from './assets/Jaime.png';
+import Ciberseguridad from './assets/ciberseguridad.png'
+import Redes from './assets/redes.png'
 
   
 
@@ -37,8 +38,8 @@ const App = () => {
   const squares = [
     { id: 1, name: ' ', img:CV },
     { id: 2, name: 'SOBRE MÍ', img:SobreMi },
-    { id: 3, name: 'HABILIDADES', img:Fifa }, 
-    { id: 4, name: 'PROYECTOS', img:Fortnite },
+    { id: 3, name: 'HABILIDADES', img:HardSkills }, 
+    { id: 4, name: 'PROYECTOS', img:Proyectos },
     
   ];
 
@@ -129,11 +130,10 @@ const App = () => {
       <img src={Jaime} className="foto-Jaime"/>
       <div className="texto-informacion">
       <h3>Jaime Sesmero Verbo</h3>
-      <p> Soy un apasionado del desarrollo web tanto frontend como
-en backend. Me encanta aprender y asumir nuevos retos
-que me ayuden a mejorar mis habilidades. En mi tiempo
-libre me gusta explorar nuevas tecnologías para mejorar y
-estar al día de las novedades.
+      <p> Soy un estudiante de 4º curso en Ingeniería Informática. Me gusta el
+desarrollo y la ciberseguridad. Soy una persona trabajadora y persistente
+ante los retos. Me encanta utilizar nuevas tecnologías y aprender
+continuamente.
       </p>
       </div>
 
@@ -150,7 +150,8 @@ estar al día de las novedades.
           <h1 style={{ marginTop: '20px' }}>Gustos</h1>
           <div className="logros">
             <img src={Balon} height={50} width={50} style={{ marginLeft: '20px' }}/>
-            <img src={Ordenador} height={50} width={50} style={{ marginLeft: '20px' }}/>
+            <img src={Ciberseguridad} height={50} width={50} style={{ marginLeft: '20px' }}/>
+             <img src={Redes} height={50} width={50} style={{ marginLeft: '20px' }}/>
           </div>
           </div>
       </div>

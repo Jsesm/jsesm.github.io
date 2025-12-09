@@ -164,6 +164,130 @@
   cursor: pointer;
 }
 
+/* --- ESTILOS DEL BOTÓN DE INFORMACIÓN (junto al título) --- */
+
+.info-proyectos {
+    display: flex;
+    align-items: center; /* Alinea el título y el botón horizontalmente */
+    gap: 15px; /* Espacio entre el título y el botón */
+}
+
+.btn-info-round {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; /* Redondeado */
+    background-color: #ffd700; /* Color de contraste (ej. dorado) */
+    color: black;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    flex-shrink: 0; /* Evita que el botón se encoja */
+    padding: 0;
+}
+
+.btn-info-round:hover {
+    background-color: #ffc400;
+    transform: scale(1.1);
+}
+
+/* --- ESTILOS DEL MODAL (Pantalla superpuesta) --- */
+
+/* Fondo oscuro que cubre toda la pantalla */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    animation: fadeIn 0.3s ease;
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: #022782; /* Color de la sección info-extra */
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 80%;
+    max-height: 80vh;
+    width: 500px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    overflow-y: auto; /* Permite desplazamiento si el contenido es largo */
+    animation: slideIn 0.3s ease;
+}
+
+/* Botón de cierre (X) */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Estilos de tipografía dentro del modal */
+.modal-content h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.modal-content h3 { /* Para el tipo de proyecto */
+    font-size: 1rem;
+    font-weight: normal;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* Estilo del botón de GitHub dentro del modal */
+.btn-github-modal {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 25px;
+    transition: background-color 0.2s;
+}
+
+.btn-github-modal:hover {
+    background-color: #555;
+}
+
+/* Animaciones del Modal */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
 
 /* Responsive móvil */
 @media (max-width: 800px) {

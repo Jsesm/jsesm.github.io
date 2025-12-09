@@ -1,16 +1,18 @@
 import React from 'react';
 import './Carta.css';
 import CartaFifa from './assets/cartafifa.png';
-import CartaPlata from './assets/plata.png'; // 👈 tu imagen de carta plata
 
-const Carta = ({ simbolo, onMouseEnter, onMouseLeave}) => {
-  // Si simbolo no existe o está vacío, usa la carta plata
-  const fondo = simbolo ? CartaFifa : CartaPlata;
+const Carta = ({ simbolo, nombre}) => {
+
+  const fondo = CartaFifa;
 
   return (
-    <div className="carta-container" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <div className="carta-container">
       <img src={fondo} alt="Carta base" className="carta-fondo" />
       {simbolo && <img src={simbolo} alt="Símbolo" className="carta-simbolo" />}
+      
+      {/* Nuevo elemento para mostrar el nombre */}
+      <h2 className="carta-nombre">{nombre}</h2>
     </div>
   );
 };
