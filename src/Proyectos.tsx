@@ -7,6 +7,10 @@ import GSI from './assets/GSI.png';
 import Working from './assets/Working.png';
 import Oshawot from './assets/oshawott.png';
 import mIPOsibleFest from './assets/festival.png';
+import PUD from './assets/PUD.png'
+import Discord from './assets/discord.png'
+import ICE from './assets/ice-logo.svg'
+import Kafka from './assets/kafka.svg'
 
 // --- Componente Modal Actualizado para manejar el array 'lenguaje' ---
 const ProjectModal = ({ nombre, tipo, url, lenguaje, onClose }) => {
@@ -67,7 +71,7 @@ function Proyectos() {
         img: GSI, 
         nombre: 'Análisis de vulnerabilidades', 
         tipo: 'Seguridad', 
-        descripcion: 'Aplicación que busca minimizar los errores de las personas de cara  a la Ingeniería Social', 
+        descripcion: 'Aplicación que busca minimizar los errores de las personas de cara  a la Ingeniería Social.', 
         url: 'https://github.com/Jsesm/gsi',
         lenguaje: [
             { nombre: 'Python', uso: 'para el análisis de red y pruebas de inyección.' },
@@ -81,7 +85,7 @@ function Proyectos() {
         img: Oshawot, 
         nombre: 'Juego Pokemon', 
         tipo: 'C#', 
-        descripcion: 'Creación del pokemon Oshawott e integración en una aplicación C#', 
+        descripcion: 'Creación del pokemon Oshawott e integración en una aplicación C#.', 
         url: 'https://github.com/9Fernando/IPOkemonAPP',
         lenguaje: [
             { nombre: 'C#', uso: 'para la lógica del juego y la interfaz gráfica (Windows Forms).' }
@@ -92,7 +96,7 @@ function Proyectos() {
         img: mIPOsibleFest, 
         nombre: 'Aplicación Festivales', 
         tipo: 'C#', 
-        descripcion: 'Creación de una aplicación en la que se podían crear festivales con sus datos', 
+        descripcion: 'Creación de una aplicación en la que se podían crear festivales con sus datos.', 
         url: 'https://github.com/Jsesm/mIPOsibleFEST',
         lenguaje: [
             { nombre: 'C#', uso: 'para la lógica de la aplicación de escritorio.' },
@@ -103,13 +107,67 @@ function Proyectos() {
         img: DyG, 
         nombre: 'Red instituto', 
         tipo: 'Redes', 
-        descripcion: 'Simulación en Packet Tracer de una red para un instituto de Miguelturra', 
+        descripcion: 'Simulación en Packet Tracer de una red para un instituto de Miguelturra.', 
         url: 'https://github.com/Jsesm/DyG',
         lenguaje: [
             { nombre: 'Cisco Packet Tracer', uso: 'para el diseño de la topología de red.' },
             { nombre: 'OSPF', uso: 'configuración del protocolo de enrutamiento dinámico.' }
         ]
     },
+    { 
+        id: 8, 
+        img: PUD, 
+        nombre: 'Simulación de trabajo con metodología PUD', 
+        tipo: 'Ingeniería del Software', 
+        descripcion: 'Trabajo con compañeros utilizando la metodología PUD, donde aprendimos a organizarnos\
+        asumir nuestros errores y aprender de ellos.', 
+        url: 'https://github.com/KevinRuedas183/ISO24-ISO2-C01',
+        lenguaje: [
+            { nombre: 'Java', uso: 'para hacer los programas que otros compañeros harían test en ellos.' },
+            { nombre: 'JUnit', uso: 'para hacer las pruebas de los programas de los compañeros del grupo.' },
+            { nombre: 'Git Flow', uso: 'utilizamos Github entre los 6 compañeros' }
+        ]
+    },
+
+        { 
+        id: 9, 
+        img: Discord, 
+        nombre: 'Aplicación para mostrar datos de un grupo de discord', 
+        tipo: 'Integración', 
+        descripcion: 'Aplicación que muestra los temas más hablados dentro de un grupo de discord para facilitar tareas de mejora a usuarios\
+        con muchas interacciones.', 
+        url: 'https://github.com/Javit-Dev/isi-2isi',
+        lenguaje: [
+            { nombre: 'Docker', uso: 'para construir la aplicación.' },
+            { nombre: 'Angular', uso: 'para hacer el front.' },
+            { nombre: 'Python y Flask', uso: 'para los microservicios' }
+        ]
+    },
+
+    { 
+        id: 10, 
+        img: ICE, 
+        nombre: 'Aprendizaje de Sistemas Distribuidos', 
+        tipo: 'Sistemas Distribuidos', 
+        descripcion: 'Comunicación entre dos servidores usando Zeroc-Ice para crear listas, diccionarios y sets.', 
+        url: 'https://github.com/Jsesm/Sistemas_Distribuidos',
+        lenguaje: [
+            { nombre: 'Python', uso: 'para hacer el código de los métodos de cada tipo.' },
+        ]
+    },
+
+        { 
+        id: 11, 
+        img: Kafka, 
+        nombre: 'Mejora proyecto de Sistemas Distribuidos', 
+        tipo: 'Sistemas Distribuidos', 
+        descripcion: 'Añadí Kafka para que un consumidor recibiera eventos y pidiera los datos al servidor de Zeroc-Ice.', 
+        url: 'https://github.com/Jsesm/SSDD_JaimeSesmero',
+        lenguaje: [
+            { nombre: 'Python', uso: 'para hacer el código del consumidor.' },
+        ]
+    },
+
     { 
         id: 5, 
         img: Working, 
