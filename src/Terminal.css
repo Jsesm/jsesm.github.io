@@ -16,7 +16,7 @@
     padding: 15px;
     border-radius: 8px;
     width: 100%; 
-    height: 400px;
+    height: 100%;
     margin: 20px auto;
     box-shadow: 0 0 15px var(--ps-blue-light); /* Sombra con el azul claro para un glow */
     border: 1px solid var(--ps-blue-deep); /* Borde sutil */
