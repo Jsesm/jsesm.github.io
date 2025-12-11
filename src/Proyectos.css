@@ -89,6 +89,7 @@
   flex-direction: column;
   align-items: center; 
   gap: 10px;
+  
   color: white;
   font-size: 2rem;
 }
@@ -313,11 +314,14 @@
 
 
 .proyectos-img {
-  width: 100%; 
+  width: 100%;
   max-width: 500px; 
-  height: 30%;
+  height: auto;
   border-radius: 12px;
-  object-fit:contain;
+  object-fit: cover;
+  height: 300px; 
+  width: 300px; 
+  
 }
 
 

@@ -145,11 +145,15 @@
   margin-top: 5%;
   margin-bottom: 20px;
   margin-right: 20px;
+  
+  /* --- Estilos Clave Mejorados para Escritorio (ROW) --- */
   display: flex;
-  flex-direction: row; /* organiza en columnas horizontales */
-  justify-content: space-between; /* separa las columnas */
+  flex-direction: row; 
+  gap: 20px; 
+  
+  /* Asegura que el contenido (foto, texto, info extra) se distribuya bien */
+  justify-content: space-between; 
   align-items: flex-start; /* alinea arriba */
-  gap: 20px; /* espacio entre columnas */
 }
 
     .informacion p, h3{
@@ -166,20 +170,27 @@
     }
 
 .texto-informacion {
-  flex: 1; /* cada bloque de texto toma igual espacio */
+  flex: 2; /* Le damos más espacio al texto principal */
   color: white;
-  width: 10%;
+  min-width: 150px;
 }
 
 .foto-Jaime{
-  height:250px;
-  width: 250px;
+  flex-shrink: 0; 
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 1 / 1; 
+  border-radius: 8px;
 }
 
 .info-extra{
-  flex: 1;
+  flex: 1; /* El bloque extra toma menos espacio */
   background-color: #022782;
   height: 100%;
+  padding: 15px; /* Añadir padding para que el contenido no pegue al borde */
+  border-radius: 8px;
+  min-width: 180px; /* Mínimo para que sea legible */
 }
 
 /* Responsive móvil */
@@ -310,35 +321,34 @@
 }
 
 
-  .informacion{
-    order:1;
-    width: 100%;
-    height:40%;
-    background-color:#1547aa;
-    opacity: 0.9;
-    min-height: 200px;
-    padding: 20px;
-    border-radius: 20px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-bottom: 0px;
-    margin-right: 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-  }
+.informacion {
+        order: 1;
+        width: 100%;
+        height: auto; /* IMPORTANTE: No fijar altura. Deja que el contenido la defina. */
+        min-height: 200px;
+        padding: 15px;
+        margin: 0; /* Eliminar márgenes exteriores */
+        
+        /* CAMBIO CLAVE: Apilamos todo primero */
+        flex-direction: column; 
+        gap: 15px;
+    }
 
-  .foto-Jaime{
-  width: 30%;  
-  height: 100%;          
-  aspect-ratio: 1 / 1;   
-  object-fit: cover;     
-  border-radius: 20px;   
-  max-width: 250px;      
-  min-width: 120px;      
-}
+    .info-header-mobile {
+        display: flex;
+        flex-direction: row; /* Foto y texto uno al lado del otro */
+        gap: 15px;
+        align-items: flex-start; /* Alineación superior */
+        width: 100%;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+.foto-Jaime {
+        flex-shrink: 0;
+        width: 100px; /* Tamaño fijo más pequeño para móvil */
+        height: 100px;
+        border-radius: 50%; /* Opcional: hazla completamente redonda en móvil */
+    }
 
 .info-extra{
 

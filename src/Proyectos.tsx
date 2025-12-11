@@ -118,9 +118,10 @@ function Proyectos() {
         descripcion: 'Apliación para poner música en un dispositivo a modo de gramola en los bares', 
         url: '',
         lenguaje: [
-            { nombre: 'React', uso: 'para la interfaz del usuario (Frontend).' },
-            { nombre: 'Node.js/Express', uso: 'para el servidor backend y API.' },
-            { nombre: 'MongoDB', uso: 'para la base de datos de canciones.' }
+            { nombre: 'Angular', uso: 'para la interfaz del usuario (Frontend).' },
+            { nombre: 'Spring y Java', uso: 'para el backend de la aplicación' },
+            { nombre: 'MySQL', uso: 'para la base de datos de usuarios.' },
+            { nombre: 'Uso de APIs', uso: 'como la de Spotify' }
         ]
     },
     { 
@@ -155,6 +156,7 @@ function Proyectos() {
 
   const handleProjectSelect = (sq) => {
     setimg(sq.img);
+    setDescripcion(sq.descripcion)
     setTipo(sq.tipo);
     setNombre(sq.nombre);
     seturl(sq.url);

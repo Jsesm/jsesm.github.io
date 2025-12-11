@@ -13,17 +13,15 @@ import Proyectos from './assets/proyectos.png';
 import CV from './assets/cvJSV.png';
 import SobreMi from './assets/sobremi.png';
 import ESI from './assets/ESI.jpg';
-import Balon from './assets/balon.png';
 import Jaime from './assets/Jaime.png';
-import Ciberseguridad from './assets/ciberseguridad.png'
-import Redes from './assets/redes.png'
+import Terminal from './Terminal';
 
   
 
 const App = () => {
   const navigate = useNavigate()
   const [hora, setHora] = useState(new Date());
-  const [showInfo] = useState(true);
+  const [showInfo, setInfo] = useState(true);
   
   
   useEffect(() => {
@@ -95,10 +93,18 @@ const App = () => {
       onClick={() => {
       
            if(sq.id === 1){
-        /*const link = document.createElement("a");
-        link.href = "../cv/CV.pdf";
+        const filePath = "/CV/CV_JaimeSesmeroVerbo.pdf";
+        const link = document.createElement("a");
+        link.href = filePath;
         link.download = "CV_JaimeSesmero.pdf";
-        link.click();*/
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+      }
+
+      if(sq.id === 2){
+        setInfo(prev => !prev)
       }
       
 
@@ -125,38 +131,44 @@ const App = () => {
 
       
     </div>
-    {showInfo && (
     <div className="informacion"> 
-      <img src={Jaime} className="foto-Jaime"/>
-      <div className="texto-informacion">
-      <h3>Jaime Sesmero Verbo</h3>
-      <p> Soy un estudiante de 4º curso en Ingeniería Informática. Me gusta el
-desarrollo y la ciberseguridad. Soy una persona trabajadora y persistente
-ante los retos. Me encanta utilizar nuevas tecnologías y aprender
-continuamente.
-      </p>
-      </div>
-
-      <div className="info-extra">
-        <div className="Rightnow">
-          <h1>Ahora mismo</h1>
-          <div className="logros">
-            <img src={ESI} height={40} width={50} style={{ marginLeft: '20px' }}/>
-            <p style={{ marginLeft: '20px', marginTop: '20px' }}>4º Curso de Ingeniería Informática</p>
-          </div>
-          
-          </div>
-          <div className="Gustos">
-          <h1 style={{ marginTop: '20px' }}>Gustos</h1>
-          <div className="logros">
-            <img src={Balon} height={50} width={50} style={{ marginLeft: '20px' }}/>
-            <img src={Ciberseguridad} height={50} width={50} style={{ marginLeft: '20px' }}/>
-             <img src={Redes} height={50} width={50} style={{ marginLeft: '20px' }}/>
-          </div>
-          </div>
-      </div>
-      </div>
-    )}
+        {showInfo ? (
+            // --- CONTENIDO DE INFORMACIÓN PERSONAL (showInfo = TRUE) ---
+            <> {/* Usamos un fragmento para agrupar el contenido interno */}
+                <img src={Jaime} className="foto-Jaime" alt="Foto de Jaime Sesmero"/>
+                <div className="texto-informacion">
+                    <h3>Jaime Sesmero Verbo</h3>
+                    <p> Soy un estudiante de 4º curso en Ingeniería Informática. Me gusta el
+                        desarrollo y la ciberseguridad. Soy una persona trabajadora y persistente
+                        ante los retos. Me encanta utilizar nuevas tecnologías y aprender
+                        continuamente.
+                    </p>
+                </div>
+                <div className="info-extra">
+                    <div className="Rightnow">
+                        <h1>Ahora mismo</h1>
+                        <div className="logros">
+                            {/* Recomendación: Mover estilos en línea a CSS */}
+                            <img src={ESI} height={40} width={50} alt="Logo ESI"/>
+                            <p>4º Curso de Ingeniería Informática</p>
+                        </div>
+                    </div>
+                    <div className="Gustos">
+                        <h1>Gustos</h1>
+                        <ul>
+                            <li>Deportes</li>
+                            <li>Ciberseguridad</li>
+                            <li>Redes</li>
+                        </ul>
+                    </div>
+                </div>
+            </>
+        ) : (
+            // --- TERMINAL SIMULATOR (showInfo = FALSE) ---
+            // Renderizamos el Terminal directamente aquí.
+            <Terminal /> 
+        )}
+    </div>
       
     </div>
     

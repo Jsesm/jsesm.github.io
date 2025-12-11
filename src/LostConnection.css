@@ -1,0 +1,97 @@
+/* LostConnection.css */
+
+/* --- Contenedor Principal (Fondo de Pantalla Completa) --- */
+.lost-connection-container {
+    /* Ocupa la pantalla completa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    
+    /* Estilos profesionales */
+    background-color: #2c3e50; /* Fondo oscuro y profesional */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- Caja de Error (La "Tarjeta" Flotante) --- */
+.error-box {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px; /* Bordes suaves */
+    /* Sombra de elevación sutil para un aspecto real */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); 
+    max-width: 500px;
+    width: 100%; /* Responsive en móvil */
+    border-top: 5px solid #e74c3c; /* Línea de color de alerta */
+}
+
+/* Icono de Alerta */
+.icon-alert {
+    font-size: 3em;
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+.error-title {
+    font-size: clamp(1.8em, 5vw, 2.5em); /* Responsive font size */
+    color: #e74c3c; /* Rojo de alerta fuerte */
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.error-message {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* --- Información de Redirección --- */
+.redirect-info {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.countdown-number {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #f39c12; /* Naranja/Ámbar para destacar el tiempo */
+    margin: 0 8px;
+    display: inline-block;
+}
+
+/* --- Botón --- */
+.home-button {
+    background-color: #3498db; /* Azul primario (Acción) */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.1s;
+    text-transform: uppercase;
+}
+
+.home-button:hover:not(:disabled) {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.home-button:disabled {
+    background-color: #95a5a6; 
+    cursor: not-allowed;
+}
+
+/* Responsive (Ajustes menores, ya es bastante responsive) */
+@media (max-width: 400px) {
+    .error-box {
+        padding: 30px 15px;
+    }
+}

@@ -11,7 +11,6 @@ import Java from './assets/java.svg';
 import Css from './assets/css.svg';
 import Html from './assets/html.svg';
 import MySQL from './assets/mysql.png';
-import Vite from './assets/vite.svg';
 import Angular from './assets/angular-icon.svg';
 import Flask from './assets/Flask.svg';
 import Spring from './assets/spring-3.svg';

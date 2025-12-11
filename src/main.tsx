@@ -6,6 +6,8 @@ import App from './App.tsx'
 import Skills from './Skills.tsx'
 import Proyectos from './Proyectos.tsx'
 import Trofeos from './Trofeos.tsx'
+import Wifi from './LostConnection.tsx'
+
 
 createRoot(document.getElementById('root')!).render(
  <StrictMode>
@@ -15,6 +17,8 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/skills" element={<Skills />} />
         <Route path="/proyectos" element={<Proyectos />} />
         <Route path="/trofeos" element={<Trofeos />} />
+        <Route path="/wifi" element={<Wifi />} />
+        
       </Routes>
     </BrowserRouter>
   </StrictMode>,
