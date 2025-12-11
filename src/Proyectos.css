@@ -110,12 +110,13 @@ object-fit:cover;
   justify-content: center; 
   align-items: center; 
   margin-bottom: 0;
+  text-align: center; 
+  width: 80%;
   
 
 }
 
 .info-proyectos h2 {
-  white-space: nowrap;
   overflow: hidden;
   font-weight: bold;
 }
