@@ -96,12 +96,9 @@
 
 .proyectos-img {
   width: 100%;
-  max-width: 500px; 
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  height: 300px; 
-  width: 300px; 
+object-fit:contain;
+  height: 700px; 
+  width: 700px; 
   
 }
 
@@ -291,7 +288,7 @@
 
 
 /* Responsive móvil */
-@media (max-width: 800px) {
+@media (max-width: 1500px) {
 
 
 
@@ -315,12 +312,12 @@
 
 .proyectos-img {
   width: 100%;
-  max-width: 500px; 
-  height: auto;
+ 
+
   border-radius: 12px;
-  object-fit: cover;
-  height: 300px; 
-  width: 300px; 
+  object-fit:contain;
+  height: 200px; 
+  width: 200px; 
   
 }
 
