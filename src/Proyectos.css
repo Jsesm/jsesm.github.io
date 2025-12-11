@@ -96,7 +96,7 @@
 
 .proyectos-img {
   width: 100%;
-object-fit:contain;
+object-fit:cover;
   height: 250px; 
   width: 250px; 
   
