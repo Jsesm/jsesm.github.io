@@ -5,6 +5,7 @@ import { useState } from "react";
 import React from './assets/react.svg';
 import SelectorCarta from "./Selector.tsx";
 import { useNavigate } from 'react-router-dom';
+import Snowfall from 'react-snowfall'
 
 import Python from './assets/python.svg';
 import Java from './assets/java.svg';
@@ -69,57 +70,50 @@ const herramientas = {
 
 
   return (
-    <div className="skills-container" style={{ backgroundImage: `url(${backgroundImg})` }}>
+
+    <><Snowfall color='white' /><div className="skills-container" style={{ backgroundImage: `url(${backgroundImg})` }}>
       <div className="inicio">
         <button className="btn-volverS" onClick={() => navigate('/')}>
           ⬅ Volver
         </button>
 
-        <div className="selector-skills" >
+        <div className="selector-skills">
           <SelectorCarta setNombreCarta={setNombreCarta} />
         </div>
 
       </div>
 
-    <div className="plantilla">
-      <div className="plantilla-item">
-        <Carta simbolo={herramientas[nombreCarta][5].imagen}
-          nombre={herramientas[nombreCarta][5].nombre}
-        
-        />
+      <div className="plantilla">
+        <div className="plantilla-item">
+          <Carta simbolo={herramientas[nombreCarta][5].imagen}
+            nombre={herramientas[nombreCarta][5].nombre} />
 
-        <Carta simbolo={herramientas[nombreCarta][6].imagen}
-          nombre={herramientas[nombreCarta][6].nombre}
-        
-        />
+          <Carta simbolo={herramientas[nombreCarta][6].imagen}
+            nombre={herramientas[nombreCarta][6].nombre} />
 
+        </div>
+        <div className="plantilla-item">
+          <Carta simbolo={herramientas[nombreCarta][4].imagen}
+            nombre={herramientas[nombreCarta][4].nombre} />
+
+        </div>
+        <div className="plantilla-item">
+          <Carta simbolo={herramientas[nombreCarta][3].imagen}
+            nombre={herramientas[nombreCarta][3].nombre} />
+          <Carta simbolo={herramientas[nombreCarta][2].imagen}
+            nombre={herramientas[nombreCarta][2].nombre} />
+
+        </div>
+        <div className="plantilla-item">
+          <Carta simbolo={herramientas[nombreCarta][1].imagen}
+            nombre={herramientas[nombreCarta][1].nombre} />
+        </div>
       </div>
-      <div className="plantilla-item">
-        <Carta simbolo={herramientas[nombreCarta][4].imagen} 
-        nombre={herramientas[nombreCarta][4].nombre}
-          />
-
-      </div>
-      <div className="plantilla-item">   
-        <Carta simbolo={herramientas[nombreCarta][3].imagen}
-        nombre={herramientas[nombreCarta][3].nombre}
-          />
-        <Carta simbolo={herramientas[nombreCarta][2].imagen}
-        nombre={herramientas[nombreCarta][2].nombre}
-        />
-
-      </div>
-      <div className="plantilla-item">
-        <Carta simbolo={herramientas[nombreCarta][1].imagen} 
-        nombre={herramientas[nombreCarta][1].nombre}
-          />
-      </div>
-    </div>
 
 
 
-</div>
-
+    </div></>
+  
   );
 };
 

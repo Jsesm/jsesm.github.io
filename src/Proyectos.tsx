@@ -11,6 +11,7 @@ import PUD from './assets/PUD.png'
 import Discord from './assets/discord.png'
 import ICE from './assets/ice-logo.svg'
 import Kafka from './assets/kafka.svg'
+import Snowfall from 'react-snowfall';
 
 // --- Componente Modal Actualizado para manejar el array 'lenguaje' ---
 const ProjectModal = ({ nombre, tipo, url, lenguaje, onClose }) => {
@@ -223,29 +224,29 @@ function Proyectos() {
   };
 
   return (
-    <div className="proyectos-container">
-      
+
+    <><Snowfall /><div className="proyectos-container">
+
       {/* 1. MODAL (Se pasa el nuevo prop 'lenguaje') */}
       {isModalOpen && (
-        <ProjectModal 
+        <ProjectModal
           nombre={nombre}
           tipo={tipo}
           url={url}
           lenguaje={lenguaje} // <-- PROP COMO ARRAY
-          onClose={() => setIsModalOpen(false)}
-        />
+          onClose={() => setIsModalOpen(false)} />
       )}
-      
+
       <div className='opciones'>
         <button className="btn-volver" onClick={() => navigate('/')}>
           ⬅ Volver
         </button>
 
-        
+
         <div className="cajas-opciones">
           {squares.map((sq) => (
-            <div 
-              key={sq.id} 
+            <div
+              key={sq.id}
               className="cajas"
               onClick={() => handleProjectSelect(sq)}
             >
@@ -262,11 +263,11 @@ function Proyectos() {
 
         <div className='info-proyectos'>
           <h2>{nombre}</h2>
-          
+
           {/* Botón de Información al lado del título */}
           {nombre && (
-            <button 
-              className="btn-info-round" 
+            <button
+              className="btn-info-round"
               onClick={() => setIsModalOpen(true)}
               title="Ver detalles del proyecto"
             >
@@ -280,9 +281,9 @@ function Proyectos() {
           <p>{descripcion}</p>
         </div>
 
-        
+
       </div>
-    </div>
+    </div></>
   );
 }
 
