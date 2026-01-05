@@ -1,362 +1,262 @@
-/* Contenedor principal */
+/* --- Variables y Reset de Estilos --- */
+:root {
+  --primary-color: #0941ae;
+  --dark-bg: #000c26;
+  --square-color: #001d61;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Contenedor Principal (Escritorio / Full Screen) --- */
 .app-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  height: 100vh;
-  padding: 20px;
+  height: 100vh; /* Ocupa exactamente el alto de la pantalla */
+  width: 100%;
+  padding: 25px;
+  background: linear-gradient(180deg, var(--primary-color), var(--dark-bg));
   position: relative;
-  background: linear-gradient(180deg, #0941ae, #000c26);
+  overflow: hidden; /* Evita scroll en el body */
+  gap: 15px;
 }
 
-.header{
+/* --- Header --- */
+.header {
+  flex: 0 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;  
-  height: 10%;      
-  padding: 0 10px;
+  padding: 10px 20px;
 }
 
-.contacto{
+.contacto {
   display: flex;
-  gap: 15px;
-  justify-content: start;
+  gap: 20px;
   align-items: center;
-  position: relative;
-  height:20px
 }
 
-.rrss{
-  width: 5vw;
-  height: 5vw;
-  max-width: 50px;
-  max-height: 50px;
-  min-width: 30px;
-  min-height: 30px;
+.rrss {
+  width: 45px;
+  height: 45px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.perfil {
+.rrss:hover { transform: scale(1.2) rotate(5deg); }
+
+.perfil, .logros {
   display: flex;
   align-items: center; 
-  gap: 8px;       
-}
-
-.logros {
-  display: flex;
-  align-items: center; 
-  gap: 3px;    
-  cursor: pointer;    
-}
-
-
-.hora{
-  font-size: 24px;
+  gap: 10px;
   color: white;
   font-family: var(--font-family);
 }
 
-/* Bloque de cuadrados */
-.squares-block {
-  display: flex;
-  width: 100%;
-  margin-top: 10%;
-  height: 20%;
-  gap: 10px;
-  margin-left: 10%;
-  justify-content: start;
-  align-items: center;
-  position: relative;
+.hora {
+  font-size: 26px;
+  font-weight: 300;
+  color: white;
+  font-family: var(--font-family);
 }
 
-/* Cuadrados */
+/* --- Bloque de Cuadrados (MENÚ GRANDE) --- */
+.squares-block {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin: 10px 0 20px 0;
+  z-index: 10;
+}
+
 .square {
-  width: 13vw;
-  height: 13vw;
-  min-height: 120px;
-  min-width: 120px;
-  background: #001d61;
+  /* Tamaño dinámico y grande */
+  width: 12vw; 
+  height: 12vw;
+  min-width: 140px;
+  min-height: 140px;
+  max-width: 200px;
+  max-height: 200px;
+  
+  background: var(--square-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
-  color: white;
   cursor: pointer;
   position: relative;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: var(--transition-bounce);
+  border: 2px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
 }
 
-/* Hover en el cuadrado */
 .square:hover {
-  
-  width: 15vw;   /* aumenta tamaño real */
-  height: 15vw;
-  min-width: 170px;
-  min-height: 170px;
+  transform: scale(1.1) translateY(-8px);
+  background-color: #1a5cd8;
+  border-color: white;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
 }
+
 .square-active {
-  width: 16vw;   
-  height: 16vw;
-  min-width: 180px;
-  min-height: 180px;         
-}
-
-.square:hover .tooltip {
-  opacity: 1;
-}
-
-.sobre_mi {
-  background-color: linear-gradient(290deg, var(--primary-color),rgb(53, 106, 136)); /* por ejemplo, color rojo */
-  border: 2px solid white;
-  border-width: 5px;
+  width: 13vw;
+  height: 13vw;
+  min-width: 160px;
+  min-height: 160px;
+  border: 4px solid white;
+  background-color: #1547aa;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
 }
 
 .square-img {
-  width: 100%;
-  height: 100%;
+  width: 65%;
+  height: 65%;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
 
-/* Tooltip (texto al pasar el ratón) */
+.square:hover .square-img { transform: scale(1.1); }
+
+/* Tooltip */
 .tooltip {
   position: absolute;
-  left: 40%; /* a la derecha del cuadrado */
-  top: 110%;
-  transform: translateY(-50%);
-  background-color: transparent;
+  top: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0,0,0,0.85);
   color: white;
-  padding: 5px 10px;
-  border-radius: 6px;
-  white-space: nowrap;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+  white-space: nowrap;
 }
 
+.square:hover .tooltip { opacity: 1; }
+
+/* --- Panel de Información (EXPANDIBLE) --- */
 .informacion {
-  height: 50%;
-  background-color:#1547aa;
-  opacity: 0.9;
-  min-height: 200px;
-  padding: 20px;
-  border-radius: 12px;
-  margin-top: 5%;
-  margin-bottom: 20px;
-  margin-right: 20px;
-  
-  /* --- Estilos Clave Mejorados para Escritorio (ROW) --- */
+  flex: 1; /* Esto hace que el cuadro crezca hasta el final de la pantalla */
   display: flex;
-  flex-direction: row; 
-  gap: 20px; 
-  
-  /* Asegura que el contenido (foto, texto, info extra) se distribuya bien */
-  justify-content: space-between; 
-  align-items: flex-start; /* alinea arriba */
+  flex-direction: row;
+  gap: 30px;
+  background-color: rgba(21, 71, 170, 0.85);
+  backdrop-filter: blur(5px);
+  border-radius: 16px;
+  padding: 40px;
+  margin-bottom: 10px;
+  overflow-y: auto; /* Scroll solo si el texto es muy largo */
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-    .informacion p, h3{
- display: block; 
-  font-size: clamp(12px, 2vw, 20px); 
-  word-wrap: break-word;             
-  overflow-wrap: break-word;         
-  text-overflow: ellipsis;           
-  white-space: normal;               
-  line-height: 1.3;                  
-  margin: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-    }
+/* Custom Scrollbar para el cuadro de info */
+.informacion::-webkit-scrollbar { width: 8px; }
+.informacion::-webkit-scrollbar-thumb { 
+  background: rgba(255,255,255,0.2); 
+  border-radius: 10px; 
+}
+
+.foto-Jaime {
+  flex: 0 0 280px; 
+  height: 280px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
 
 .texto-informacion {
-  flex: 2; /* Le damos más espacio al texto principal */
+  flex: 2;
   color: white;
-  min-width: 150px;
+  font-family: var(--font-family);
 }
 
-.foto-Jaime{
-  flex-shrink: 0; 
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  aspect-ratio: 1 / 1; 
-  border-radius: 8px;
+.texto-informacion h3 { 
+  margin-bottom: 20px; 
+  font-size: 2rem; 
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
-.info-extra{
-  flex: 1; /* El bloque extra toma menos espacio */
-  background-color: #022782;
-  height: 100%;
-  padding: 15px; /* Añadir padding para que el contenido no pegue al borde */
-  border-radius: 8px;
-  min-width: 180px; /* Mínimo para que sea legible */
+.texto-informacion p { 
+  line-height: 1.6; 
+  font-size: 1.15rem; 
+  opacity: 0.9;
 }
 
-/* Responsive móvil */
+.info-extra {
+  flex: 1;
+  background-color: rgba(2, 39, 130, 0.5);
+  padding: 25px;
+  border-radius: 12px;
+  color: white;
+  height: fit-content;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* --- MÓVIL (Ajustes de flujo) --- */
 @media (max-width: 800px) {
- 
-
-  .app-container{
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    display:flex;
+  .app-container {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto; 
+    padding: 15px;
     gap: 20px;
-    height: 100vh;
-    padding: 20px;
-    position: relative;
-    background: linear-gradient(180deg, #0941ae, #000c26);
   }
-.header {
-  order: 3;
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  justify-content: flex-start;
-  gap: 15px;
-  padding: 20px;
-  background: linear-gradient(180deg, #0941ae, #000c26);
-  color: white;
-  height: 30%;
-}
 
+  .informacion {
+    order: 1;
+    flex: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
 
-.contacto {
-  order: 1;
-}
+  .foto-Jaime {
+    flex: none;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+  }
 
-.perfil {
-  order: 2;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 18px;
-  font-weight: 500;
-}
+  .squares-block {
+    order: 2;
+    gap: 12px;
+  }
 
-.logros {
-  order: 2; /* Mismo nivel que perfil */
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-}
+  .square {
+    width: 85px;
+    height: 85px;
+    min-width: 85px;
+    min-height: 85px;
+  }
 
-.hora {
-  order: 3;
-  font-size: 14px;
-  opacity: 0.8;
-}
+  .header {
+    order: 3;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
 
-.perfil,
-.logros {
-  justify-content: center;
-}
-
-/* Estilo para los íconos */
-.rrss {
-  width: 30px;
-  height: 30px;
-  margin: 0 5px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-.squares-block {
-  order: 2;
-  display: flex;
-  flex-wrap: wrap; /* Permite que bajen de línea si no caben */
-  justify-content: center; /* Centra los cuadrados en el ancho */
-  align-items: center;
-  gap: 15px; /* Espacio entre cuadrados */
-  width: 100%;
-  height: 30%; 
-  padding: 2%;
-  box-sizing: border-box;
-  margin-top: 0;
-  position: relative;
-  margin-left: 0;
-}
-
-.square {
-  aspect-ratio: 1 / 1; 
-  flex: 1 1 120px; 
-  width: 10%;
-  height: 10%;
-  max-height: 170px;
-  min-height: 70px;
-  max-width: 100px; 
-  min-width: 70px; 
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: clamp(14px, 2vw, 24px); 
-  color: white;
-  cursor: pointer;
-  position: relative;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-
-.square:hover {
-  width: 10%;   
-  height: 10%;
-  max-width: 100px;
-  max-height: 170px;
-  min-width: 70px;
-  min-height: 70px;
-  transform: 1;
-  background-color: #003399;
-}
-
-.square-active {
-  order:4;
-  max-width: 100%; 
-  min-width: 70px;  
-   
-}
-.tooltip{
-  display: none;
-}
-
-
-.informacion {
-        order: 1;
-        width: 100%;
-        height: auto; /* IMPORTANTE: No fijar altura. Deja que el contenido la defina. */
-        min-height: 200px;
-        padding: 15px;
-        margin: 0; /* Eliminar márgenes exteriores */
-        
-        /* CAMBIO CLAVE: Apilamos todo primero */
-        flex-direction: column; 
-        gap: 15px;
-    }
-
-    .info-header-mobile {
-        display: flex;
-        flex-direction: row; /* Foto y texto uno al lado del otro */
-        gap: 15px;
-        align-items: flex-start; /* Alineación superior */
-        width: 100%;
-        padding-bottom: 15px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-.foto-Jaime {
-        flex-shrink: 0;
-        width: 100px; /* Tamaño fijo más pequeño para móvil */
-        height: 100px;
-        border-radius: 50%; /* Opcional: hazla completamente redonda en móvil */
-    }
-
-.info-extra{
-
-  display: none;
-}
-
-
-
-
-
+  .tooltip {
+    display: block; /* Volver a mostrarlo */
+    font-size: 11px; /* Más pequeño para que no estorbe */
+    padding: 3px 8px;
+    top: 100%; /* Ajustar posición para que no tape el cuadrado */
+    background-color: rgba(0, 0, 0, 0.9); /* Un poco más oscuro para leer mejor */
+  }
+  
+  /* Opcional: Si quieres que solo salga al tocarlo */
+  .square:active .tooltip {
+    opacity: 1;
+  }
 }

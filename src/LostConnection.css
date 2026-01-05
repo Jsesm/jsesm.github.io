@@ -1,97 +1,150 @@
 /* LostConnection.css */
 
-/* --- Contenedor Principal (Fondo de Pantalla Completa) --- */
-.lost-connection-container {
-    /* Ocupa la pantalla completa */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-    
-    /* Estilos profesionales */
-    background-color: #2c3e50; /* Fondo oscuro y profesional */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
+.lost-connection-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1b 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
-/* --- Caja de Error (La "Tarjeta" Flotante) --- */
-.error-box {
-    background-color: #ffffff;
-    padding: 40px 30px;
-    border-radius: 12px; /* Bordes suaves */
-    /* Sombra de elevación sutil para un aspecto real */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); 
-    max-width: 500px;
-    width: 100%; /* Responsive en móvil */
-    border-top: 5px solid #e74c3c; /* Línea de color de alerta */
+/* Tarjeta con Efecto Cristal */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 40px;
+  width: 90%;
+  max-width: 450px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Icono de Alerta */
-.icon-alert {
-    font-size: 3em;
-    margin-bottom: 15px;
-    line-height: 1;
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.status-badge {
+  background: rgba(255, 71, 87, 0.2);
+  color: #ff4757;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 71, 87, 0.3);
+}
+
+/* Icono con Pulsación Animada */
+.icon-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-icon {
+  font-size: 3rem;
+  z-index: 2;
+}
+
+.pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 112, 206, 0.2);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 114, 206, 0.7); }
+  70% { transform: scale(1.2); box-shadow: 0 0 0 20px rgba(0, 114, 206, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 114, 206, 0); }
 }
 
 .error-title {
-    font-size: clamp(1.8em, 5vw, 2.5em); /* Responsive font size */
-    color: #e74c3c; /* Rojo de alerta fuerte */
-    margin-bottom: 20px;
-    font-weight: 700;
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  font-weight: 700;
 }
 
 .error-message {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 30px;
-    line-height: 1.6;
+  color: #a0a0c0;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 1rem;
 }
 
-/* --- Información de Redirección --- */
-.redirect-info {
-    font-size: 0.9em;
-    color: #777;
-    margin-bottom: 30px;
+/* Barra de Progreso */
+.countdown-section {
+  margin-bottom: 30px;
 }
 
-.countdown-number {
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #f39c12; /* Naranja/Ámbar para destacar el tiempo */
-    margin: 0 8px;
-    display: inline-block;
+.progress-bar-container {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden;
 }
 
-/* --- Botón --- */
-.home-button {
-    background-color: #3498db; /* Azul primario (Acción) */
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 600;
-    transition: background-color 0.3s, transform 0.1s;
-    text-transform: uppercase;
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0072ce, #00d4ff);
+  transition: width 1s linear;
+  box-shadow: 0 0 15px rgba(0, 114, 206, 0.5);
 }
 
-.home-button:hover:not(:disabled) {
-    background-color: #2980b9;
-    transform: translateY(-1px);
+.redirect-text {
+  color: #8080a0;
+  font-size: 0.9rem;
 }
 
-.home-button:disabled {
-    background-color: #95a5a6; 
-    cursor: not-allowed;
+.redirect-text strong {
+  color: #00d4ff;
 }
 
-/* Responsive (Ajustes menores, ya es bastante responsive) */
-@media (max-width: 400px) {
-    .error-box {
-        padding: 30px 15px;
-    }
+/* Botón Moderno */
+.cyber-button {
+  background: white;
+  color: #0f0f1b;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.cyber-button:hover:not(:disabled) {
+  background: #00d4ff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+}
+
+.cyber-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

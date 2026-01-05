@@ -1,0 +1,86 @@
+/* --- Navbar Base --- */
+.main-navbar {
+  width: 100%;
+  height: 60px;
+  background: rgba(0, 12, 38, 0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.nav-logo {
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-family: 'Segoe UI', sans-serif;
+  white-space: nowrap; /* Evita que el logo se rompa en dos líneas */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: #3b82f6;
+}
+
+@media (max-width: 800px) {
+  .main-navbar {
+    padding: 0 15px;
+    height: auto; /* Permite que la barra crezca un poco si es necesario */
+    min-height: 60px;
+    flex-direction: column; /* Logo arriba, links abajo */
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 0;
+  }
+
+  .nav-logo {
+    font-size: 1rem;
+  }
+
+  /* Ocultamos el botón de hamburguesa por si quedó en el HTML */
+  .nav-hamburger {
+    display: none !important;
+  }
+
+  .nav-links {
+    position: static; /* Volvemos al flujo normal */
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 10px;
+    
+    /* Si tienes muchos enlaces, esto permite deslizar lateralmente con el dedo */
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Quitamos scrollbars visibles pero mantenemos funcionalidad */
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem; /* Letra un poco más pequeña para móvil */
+    padding: 5px 2px;
+  }
+}

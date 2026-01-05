@@ -12,6 +12,7 @@ import Discord from './assets/discord.png'
 import ICE from './assets/ice-logo.svg'
 import Kafka from './assets/kafka.svg'
 import Snowfall from 'react-snowfall';
+import Cartas from './assets/JuegoCartas.png';
 
 // --- Componente Modal Actualizado para manejar el array 'lenguaje' ---
 const ProjectModal = ({ nombre, tipo, url, lenguaje, onClose }) => {
@@ -196,11 +197,11 @@ function Proyectos() {
     },
     { 
         id: 7, 
-        img: Working, 
+        img: Cartas, 
         nombre: 'Juego de Cartas', 
         tipo: 'React Native', 
         descripcion: 'Juego de elegir mayor o menor, 5 en raya y brisca. También tiene una tienda para conseguir cartas', 
-        url: '',
+        url: 'https://pruebasaluuclm-my.sharepoint.com/:u:/g/personal/jaime_sesmero_alu_uclm_es/IQDoGjcGuXLMSpCwBNx7ZrKTAeNz06inDXM79fEjLTBysdY?e=FOh4RX',
         lenguaje: [
             { nombre: 'React Native', uso: 'para el desarrollo de la aplicación móvil multiplataforma.' },
             { nombre: 'TypeScript', uso: 'para la lógica tipada del juego.' },

@@ -1,58 +1,59 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Necesitas instalar y usar react-router-dom
+import { useNavigate } from 'react-router-dom';
 import './LostConnection.css';
 
 const REDIRECT_DELAY_SECONDS = 5;
 
 const LostConnection: React.FC = () => {
   const [countdown, setCountdown] = useState(REDIRECT_DELAY_SECONDS);
-  // Hook de navegación
   const navigate = useNavigate(); 
 
   useEffect(() => {
-    // 1. Configurar el temporizador de cuenta regresiva
     if (countdown > 0) {
       const timerId = setInterval(() => {
         setCountdown((prevCount) => prevCount - 1);
-      }, 1000); // Decrementa cada segundo
-
-      // Función de limpieza: detiene el temporizador si el componente se desmonta
+      }, 1000);
       return () => clearInterval(timerId); 
-    } 
-    
-    // 2. Redirigir cuando el contador llega a cero
-    else if (countdown === 0) {
-      // Redirige a la página principal
+    } else {
       navigate('/'); 
     }
-  }, [countdown, navigate]); // Dependencias: se vuelve a ejecutar cuando countdown cambia
+  }, [countdown, navigate]);
 
   return (
-    <div className="lost-connection-container">
-      <div className="error-box">
+    <div className="lost-connection-overlay">
+      <div className="glass-card">
+        <div className="status-badge">CONEXIÓN FALLIDA</div>
         
-        <div className="icon-alert">
-            ❌
+        <div className="icon-container">
+            <div className="pulse-ring"></div>
+            <span className="main-icon">📡</span>
         </div>
 
-        <h1 className="error-title">¡UPS! CONEXIÓN PERDIDA</h1>
+        <h1 className="error-title">¡UPS! SIN SEÑAL</h1>
+        
         <p className="error-message">
-          No podemos establecer la conexión con el servidor. 
-          Por favor, revisa la configuración de tu red y vuelve a intentarlo.
+          Parece que los paquetes de datos se han perdido en el camino. 
+          Revisa tu router y vuelve pronto.
         </p>
         
-        <div className="redirect-info">
-          Serás redirigido a la página de inicio en 
-          <span className="countdown-number">{countdown}</span> segundos...
+        <div className="countdown-section">
+          <div className="progress-bar-container">
+            <div 
+              className="progress-fill" 
+              style={{ width: `${(countdown / REDIRECT_DELAY_SECONDS) * 100}%` }}
+            ></div>
+          </div>
+          <p className="redirect-text">
+            Redirigiendo al puerto base en <strong>{countdown}s</strong>
+          </p>
         </div>
         
-        
         <button 
-          className="home-button" 
+          className="cyber-button" 
           onClick={() => navigate('/')}
-          disabled={countdown === 0} // Deshabilitar si ya se está redirigiendo
+          disabled={countdown === 0}
         >
-          Ir a Inicio Ahora
+          FORZAR REGRESO
         </button>
       </div>
     </div>
