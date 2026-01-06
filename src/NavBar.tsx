@@ -1,30 +1,39 @@
 import React, { useState } from 'react';
 import './NavBar.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'; // Importamos Link
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
- const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  // Función para navegar y cerrar el menú móvil al mismo tiempo
+  const handleNavigation = (path) => {
+    navigate(path);
+    setIsOpen(false);
+  };
+
   return (
     <nav className="main-navbar">
-      <div className="nav-logo">Mi Portfolio</div>
-
-      {/* Icono de hamburguesa (solo visible en móvil) */}
-      <div className={`nav-hamburger ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(!isOpen)}>
-        <span></span>
-        <span></span>
-        <span></span>
+      <div className="nav-logo" onClick={() => navigate('/')} style={{cursor: 'pointer'}}>
+        Mi Portfolio
       </div>
 
-      {/* Enlaces: Se añade la clase 'active' cuando isOpen es true */}
+      {/* Usamos Link en lugar de <a> para que React Router tome el control total */}
       <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
-        <li><a href="/" onClick={() => { navigate('/') }}>Inicio</a></li>
-        <li><a href="/proyectos" onClick={() => { navigate('/proyectos') }}>Proyectos</a></li>
-        <li><a href="/skills" onClick={() => { navigate('/skills') }}>Habilidades</a></li>
-        <li><a href="/trofeos" onClick={() => { navigate('/trofeos') }}>Logros</a></li>
+        <li>
+          <Link to="/" onClick={() => setIsOpen(false)}>Inicio</Link>
+        </li>
+        <li>
+          <Link to="/proyectos" onClick={() => setIsOpen(false)}>Proyectos</Link>
+        </li>
+        <li>
+          <Link to="/skills" onClick={() => setIsOpen(false)}>Habilidades</Link>
+        </li>
+        <li>
+          <Link to="/trofeos" onClick={() => setIsOpen(false)}>Logros</Link>
+        </li>
       </ul>
       
-      {/* Fondo oscuro al abrir el menú en móvil */}
       {isOpen && <div className="nav-overlay" onClick={() => setIsOpen(false)}></div>}
     </nav>
   );
