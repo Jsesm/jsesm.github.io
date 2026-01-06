@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './NavBar.css';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+ const navigate = useNavigate()
   return (
     <nav className="main-navbar">
       <div className="nav-logo">Mi Portfolio</div>
@@ -17,10 +18,10 @@ const Navbar = () => {
 
       {/* Enlaces: Se añade la clase 'active' cuando isOpen es true */}
       <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
-        <li><a href="/" onClick={() => setIsOpen(false)}>Inicio</a></li>
-        <li><a href="/proyectos" onClick={() => setIsOpen(false)}>Proyectos</a></li>
-        <li><a href="/skills" onClick={() => setIsOpen(false)}>Habilidades</a></li>
-        <li><a href="/trofeos" onClick={() => setIsOpen(false)}>Logros</a></li>
+        <li><a href="/" onClick={() => { navigate('/') }}>Inicio</a></li>
+        <li><a href="/proyectos" onClick={() => { navigate('/proyectos') }}>Proyectos</a></li>
+        <li><a href="/skills" onClick={() => { navigate('/skills') }}>Habilidades</a></li>
+        <li><a href="/trofeos" onClick={() => { navigate('/trofeos') }}>Logros</a></li>
       </ul>
       
       {/* Fondo oscuro al abrir el menú en móvil */}

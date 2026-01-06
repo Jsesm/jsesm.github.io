@@ -1,15 +1,23 @@
+/* --- CONFIGURACIÓN GLOBAL --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .proyectos-container {
   display: flex;
-  flex-direction: row; /* uno al lado del otro */
+  flex-direction: row; /* Desktop: uno al lado del otro */
   width: 100vw;
   height: 100vh;
   background: linear-gradient(180deg, #1d41a2, #4095d8);
   font-family: sans-serif;
+  overflow: hidden; /* Evita scrolls innecesarios en desktop */
 }
 
-/* Panel izquierdo */
+/* --- PANEL IZQUIERDO --- */
 .opciones {
-  flex: 1; /* 50% del espacio */
+  flex: 1;
   background-color: #2d6fb9;
   padding: 20px;
   display: flex;
@@ -20,7 +28,6 @@
   position: relative;
 }
 
-/* Botón volver */
 .btn-volver {
   background: linear-gradient(180deg, #2eb9ff, #1476ff);
   color: #fff;
@@ -37,7 +44,8 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   position: absolute;
   top: 20px;
-  left: 20px; /* siempre arriba a la izquierda */
+  left: 20px;
+  z-index: 10;
 }
 
 .btn-volver:hover {
@@ -45,14 +53,13 @@
   box-shadow: 0 3px 0 #0e3ca6;
 }
 
-/* Grid de cajas */
 .cajas-opciones {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   width: 100%;
   max-width: 500px;
-  margin-top: 80px; /* separación del botón */
+  margin-top: 80px;
 }
 
 .cajas {
@@ -65,88 +72,74 @@
   align-items: center;
   aspect-ratio: 1/1;
   transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
-.cajas:hover {
-  transform: scale(1.05);
-}
+.cajas:hover { transform: scale(1.05); }
 
 .cajas-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
-  cursor: pointer;
 }
 
-
+/* --- PANEL DERECHO (PROYECTOS) --- */
 .proyectos {
   flex: 1; 
   background-color: transparent;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center; 
-  gap: 10px;
-  
+  gap: 15px;
   color: white;
-  font-size: 2rem;
 }
 
 .proyectos-img {
-  width: 100%;
-object-fit:cover;
-  height: 250px; 
   width: 250px; 
-  
+  height: 250px; 
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* h2 y h3 alineados horizontalmente */
 .info-proyectos {
   display: flex;
   flex-direction: row;
   gap: 15px; 
   justify-content: center; 
   align-items: center; 
-  margin-bottom: 0;
   text-align: center; 
-  width: 80%;
-  
-
+  width: 100%;
 }
 
 .info-proyectos h2 {
-  overflow: hidden;
+  font-size: 2rem;
   font-weight: bold;
+  margin: 0;
 }
 
-.tipo.C {
-  color: #000000; 
+/* Tipos de proyecto */
+.tipo.C { color: #000000; }
+.tipo.Rede { color: yellow; }
+.tipo.Segurida { color: #2ecc71; }
 
-}
-
-.tipo.Rede {
-  color: yellow; 
-
-}
-
-.tipo.Segurida {
-  color: #2ecc71;
-
-}
-
-.descripcion-proyectos{
+.descripcion-proyectos {
   border: 2px solid white;
-  background-color: #aeeefc ;
+  background-color: #aeeefc;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
 }
-
 
 .descripcion-proyectos p {
   text-align: center; 
-  max-width: 500px;
-  color:#000000;
+  color: #000000;
+  margin: 0;
 }
+
 .btn-github {
   display: inline-flex;
   align-items: center;
@@ -157,224 +150,96 @@ object-fit:cover;
   text-decoration: none;
   padding: 10px 16px;
   border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  transition: background 0.3s;
 }
 
-/* --- ESTILOS DEL BOTÓN DE INFORMACIÓN (junto al título) --- */
-
-.info-proyectos {
-    display: flex;
-    align-items: center; /* Alinea el título y el botón horizontalmente */
-    gap: 15px; /* Espacio entre el título y el botón */
-}
-
+/* --- BOTÓN INFO ROUND --- */
 .btn-info-round {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%; /* Redondeado */
-    background-color: #ffd700; /* Color de contraste (ej. dorado) */
-    color: black;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
-    flex-shrink: 0; /* Evita que el botón se encoja */
-    padding: 0;
-}
-
-.btn-info-round:hover {
-    background-color: #ffc400;
-    transform: scale(1.1);
-}
-
-/* --- ESTILOS DEL MODAL (Pantalla superpuesta) --- */
-
-/* Fondo oscuro que cubre toda la pantalla */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semitransparente */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Asegura que esté por encima de todo */
-    animation: fadeIn 0.3s ease;
-}
-
-/* Contenido del modal */
-.modal-content {
-    background-color: #022782; /* Color de la sección info-extra */
-    color: white;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 80%;
-    max-height: 80vh;
-    width: 500px;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    overflow-y: auto; /* Permite desplazamiento si el contenido es largo */
-    animation: slideIn 0.3s ease;
-}
-
-/* Botón de cierre (X) */
-.modal-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-    line-height: 1;
-}
-
-/* Estilos de tipografía dentro del modal */
-.modal-content h2 {
-    font-size: 1.8rem;
-    margin-top: 0;
-    margin-bottom: 5px;
-}
-
-.modal-content h3 { /* Para el tipo de proyecto */
-    font-size: 1rem;
-    font-weight: normal;
-    color: #ffd700;
-    margin-bottom: 20px;
-}
-
-.modal-content p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 30px;
-}
-
-/* Estilo del botón de GitHub dentro del modal */
-.btn-github-modal {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 25px;
-    transition: background-color 0.2s;
-}
-
-.btn-github-modal:hover {
-    background-color: #555;
-}
-
-/* Animaciones del Modal */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideIn {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-
-/* Responsive móvil */
-@media (max-width: 1500px) {
-
-
-
-.proyectos-container {
-  display: flex;
-  flex-direction: column; 
-  width: 100vw;
-  height: 100vh;
-}
-
-.opciones, .proyectos {
-  height: 50%;
-  width: 100%;
-}
-
-.cajas-opciones {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-
-.proyectos-img {
-  width: 100%;
- 
-
-  border-radius: 12px;
-  object-fit:contain;
-  height: 200px; 
-  width: 200px; 
-  
-}
-
-
-.info-proyectos {
-  display: flex;
-  flex-direction: row;
-  gap: 15px; 
-  justify-content: center;
-  align-items: baseline; 
-  margin-bottom: 0;
-  text-align: center;
-}
-
-.info-proyectos h2 {
-  display: block; 
-  font-size: clamp(19px, 2vw, 20px); 
-  word-wrap: break-word;             
-  overflow-wrap: break-word;         
-  text-overflow: ellipsis;           
-  white-space: normal;               
-  line-height: 1.3;                  
-  margin: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.descripcion-proyectos p {
-  height:20%;
-  display: block; 
-  font-size: clamp(15px, 2vw, 20px); 
-  word-wrap: break-word;             
-  overflow-wrap: break-word;         
-  text-overflow: ellipsis;           
-  white-space: normal;               
-  line-height: 1.3;                  
-  margin: 0;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-.btn-github {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px; 
-  background-color: #24292e; /* color GitHub */
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 10px 16px;
-  border-radius: 8px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #ffd700;
+  color: black;
   border: none;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* --- MODAL --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #022782;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 90%;
+  width: 500px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
   cursor: pointer;
 }
 
+/* --- RESPONSIVE MÓVIL (Tu estructura original mejorada) --- */
+@media (max-width: 1500px) {
+  .proyectos-container {
+    flex-direction: column; 
+  }
 
+  .opciones, .proyectos {
+    height: 50%; /* 50% de la pantalla cada uno */
+    width: 100%;
+    padding: 15px;
+    overflow-y: auto; /* Permite scroll interno si el contenido es mucho */
+  }
 
+  .cajas-opciones {
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 60px; /* Ajuste para el botón volver */
+    gap: 10px;
+  }
+
+  .btn-volver {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+
+  .proyectos-img {
+    height: 180px; 
+    width: 180px; 
+    object-fit: contain;
+  }
+
+  .info-proyectos {
+    gap: 10px;
+  }
+
+  .info-proyectos h2 {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+  }
+
+  .descripcion-proyectos p {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+  }
 }
