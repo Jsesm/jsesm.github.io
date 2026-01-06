@@ -1,40 +1,41 @@
 import React, { useState } from 'react';
 import './NavBar.css';
-import { useNavigate, Link } from 'react-router-dom'; // Importamos Link
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
-  // Función para navegar y cerrar el menú móvil al mismo tiempo
-  const handleNavigation = (path) => {
+  // Función para navegar y cerrar el menú móvil automáticamente
+  const goTo = (path) => {
     navigate(path);
     setIsOpen(false);
   };
 
   return (
     <nav className="main-navbar">
-      <div className="nav-logo" onClick={() => navigate('/')} style={{cursor: 'pointer'}}>
+      <div className="nav-logo" onClick={() => goTo('/')} style={{ cursor: 'pointer' }}>
         Mi Portfolio
       </div>
 
-      {/* Usamos Link en lugar de <a> para que React Router tome el control total */}
+
+
       <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
         <li>
-          <Link to="/" onClick={() => setIsOpen(false)}>Inicio</Link>
+          <div className="nav-item-div" onClick={() => navigate('/')}>Inicio</div>
         </li>
         <li>
-          <Link to="/proyectos" onClick={() => setIsOpen(false)}>Proyectos</Link>
+          <div className="nav-item-div" onClick={() => navigate('/proyectos')}>Proyectos</div>
         </li>
         <li>
-          <Link to="/skills" onClick={() => setIsOpen(false)}>Habilidades</Link>
+          <div className="nav-item-div" onClick={() => navigate('/skills')}>Habilidades</div>
         </li>
         <li>
-          <Link to="/trofeos" onClick={() => setIsOpen(false)}>Logros</Link>
+          <div className="nav-item-div" onClick={() => navigate('/trofeos')}>Logros</div>
         </li>
       </ul>
       
-      {isOpen && <div className="nav-overlay" onClick={() => setIsOpen(false)}></div>}
+     
     </nav>
   );
 };

@@ -22,6 +22,17 @@
   white-space: nowrap; /* Evita que el logo se rompa en dos líneas */
 }
 
+.nav-item-div {
+  cursor: pointer;
+  color: white; /* O el color que tengas */
+  padding: 10px;
+  /* Añade aquí el resto de estilos que tenías para los enlaces <a> */
+}
+
+.nav-item-div:hover {
+  color: #ccc; /* Efecto hover */
+}
+
 .nav-links {
   display: flex;
   list-style: none;
